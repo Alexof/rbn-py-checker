@@ -69,6 +69,7 @@
 #--- LEGACY: Error if Vocals and Harmony1 ODs aren't exact same.
 #
 
+import os
 import re
 from collections import Counter
 
@@ -77,7 +78,8 @@ from collections import Counter
 #cp = ConfigParser()
 #cp.read(CONFIG_FILE)
 #OUTPUT_FILE = cp.get("GENERAL", "output_file")
-OUTPUT_FILE = 'C:\Users\Alexander\Desktop\myfile.txt'
+#OUTPUT_FILE = 'C:\Users\Alexander\Desktop\myfile.txt'
+OUTPUT_FILE = os.path.abspath(os.path.dirname(__file__)) + "/myfile.txt"
 # (end) Config section
 
 # (start) Class Notas
