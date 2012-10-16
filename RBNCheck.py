@@ -68,7 +68,6 @@
 #--- LEGACY: Error if Keys and Pro Keys ODs aren't exact same
 #--- LEGACY: Error if Vocals and Harmony1 ODs aren't exact same.
 #
-
 import re
 from collections import Counter
 
@@ -195,7 +194,7 @@ def handle_drums(content):
 			else:
 				#debug("Text Event: Midi # {}, MBT {}, Type {}, Extra {} ".format( str( decval ), str( noteloc ),str( midi_parts[1] ),str( midi_parts[2] ) ) )
 				#debug( "{} at {}".format( "None", format_location( noteloc ) ), True )
-				debug("",True)
+				debug("")
 		#Get all kicks in Easy and check for errors (K+GEM)
 		#Also we check for non existent gems on expert
 		debug( "", True )
@@ -290,12 +289,28 @@ def handle_drums(content):
 		debug( "=================== ENDS ANIMATION BUT NO PRO MARKER ===================", True )
 		
 		#Get all Drums fills
+		#We only get orange marker drum fill assuming all five are set
 		debug( "", True )
 		debug( "=================== GENERAL DRUMS: Drum Fills ===================", True )
-		#c = Counter()		
-		for notas_item in filter(lambda x: x.valor >= 120 and x.valor <= 124, l_gems):
+		fill_start = []
+		fill_end = []
+		#Start notes
+		for notas_item in filter(lambda x: x.valor == 120 , l_gems):
+			fill_start.append( notas_item.pos )
+			debug( "Found {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 		
+		#End notes
+		for notas_item in filter(lambda x: x.valor == 120 , r_gems):
+			fill_end.append( notas_item.pos )
 			debug( "Found {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 		
 		debug( "=================== ENDS GENERAL DRUMS: Drum Fills ===================", True )
+		
+		for index, item in enumerate(fill_start):
+			debug( "{}, {}".format(index, item) ,True )
+			debug( "Ends at {}".format(fill_end[index]) ,True )
+					
+		
+		debug(str(fill_start),True)
+		debug(str(fill_end),True)
 		
 		#Let's calculate some totals
 		total_kicks_x = len( filter(lambda x: x.valor == 96, l_gems) )
@@ -481,4 +496,6 @@ with open(OUTPUT_FILE, 'w') as f:
 		
 		track_content = ""
 		#debug(str(dTmpl))
+
+	
 
