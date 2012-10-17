@@ -1,21 +1,23 @@
 # PYTHON REAPER SCRIPT FOR RBN ERROR CHECKING
 # Version 1.00
 # Alex - 2012-10-30
+# rbn@mirockband.com
 # This script is inspired on Casto's RBN Script
 # This is a porting to Python as Perl support was removed after REAPER 4.13
+# Special thanks to neurogeek for helping with Python learning making all this possible!
 #
 #GUITAR/BASS
 #- Expert
-#--- LEGACY: No three note chords containing both green and orange (Pending)
-#--- LEGACY: No four or more note chords (Pending)
+#--- LEGACY: No three note chords containing both green and orange
+#--- LEGACY: No four or more note chords
 #- Hard
-#--- LEGACY: No three note chords (Pending)
-#--- LEGACY: No green + orange chords (Pending)
-#--- LEGACY: If chord on Expert then chord here (Pending)
+#--- LEGACY: No three note chords
+#--- LEGACY: No green + orange chords
+#--- LEGACY: If chord on Expert then chord here
 #- Medium
-#--- LEGACY: No green+blue / green+orange / red+orange chords (Pending)
-#--- LEGACY: No forced HOPOs (Pending)
-#--- LEGACY: If chord on Expert then chord here (Pending)
+#--- LEGACY: No green+blue / green+orange / red+orange chords
+#--- LEGACY: No forced HOPOs
+#--- LEGACY: If chord on Expert then chord here
 #- Easy
 #--- LEGACY: No chords (Pending)
 #- General
@@ -23,8 +25,8 @@
 #
 #DRUMS
 #- General
-#--- LEGACY: No OD or Rolls in or overlapping drum fills (Pending)
-#--- LEGACY: OD starts at end of Fill (Warning) (Pending)
+#--- LEGACY: No OD or Rolls in or overlapping drum fills
+#--- LEGACY: OD starts at end of Fill (Warning)
 #--- LEGACY: Error if Drum Animation for Toms exist without Pro Markers for them
 #--- NEW: Error Non existent gems on expert but in lower difficulties
 #- Medium
@@ -68,6 +70,7 @@
 #--- LEGACY: Error if Keys and Pro Keys ODs aren't exact same
 #--- LEGACY: Error if Vocals and Harmony1 ODs aren't exact same.
 #
+import os
 import re
 from collections import Counter
 
@@ -77,6 +80,7 @@ from collections import Counter
 #cp.read(CONFIG_FILE)
 #OUTPUT_FILE = cp.get("GENERAL", "output_file")
 OUTPUT_FILE = 'C:\Users\Alexander\Desktop\myfile.txt'
+#OUTPUT_FILE = os.path.abspath(os.path.dirname(__file__)) + "/myfile.txt"
 # (end) Config section
 
 # (start) Class Notas
@@ -291,39 +295,71 @@ def handle_drums(content):
 		#Get all Drums fills
 		#We only get orange marker drum fill assuming all five are set
 		debug( "", True )
-		debug( "=================== GENERAL DRUMS: Drum Fills ===================", True )
+		debug( "=================== GENERAL DRUMS: Drum Fills (OD and Drum Roll Validation) ===================", True )
 		fill_start = []
 		fill_end = []
+		overlap_fill_overdrive = []
+		overlap_fill_overdrive_start = []
+		overlap_fill_overdrive_end = []
+		overlap_fill_drum_roll = []
 		#Start notes
 		for notas_item in filter(lambda x: x.valor == 120 , l_gems):
 			fill_start.append( notas_item.pos )
-			debug( "Found {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 		
+			debug( "Found {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 
 		#End notes
 		for notas_item in filter(lambda x: x.valor == 120 , r_gems):
-			fill_end.append( notas_item.pos )
+			fill_end.append( notas_item.pos )			
 			debug( "Found {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 		
-		debug( "=================== ENDS GENERAL DRUMS: Drum Fills ===================", True )
+		#Check for OD and drum rolls inside any DRUM fills
+		for midi_check in [116, 126]:
+			for index, item in enumerate(fill_start):
+				for od_midi_note in filter(lambda x: x.valor == midi_check and ( x.pos >= item and x.pos <= fill_end[index] ), ( r_gems + l_gems )):
+					if( midi_check == 116 ):
+						#If the od ends right before the drum fill give a warning
+						if( od_midi_note.pos == item ):
+							overlap_fill_overdrive_start.append( notas_item.pos )
+							debug( "Found {} ending right before Fill #{} at {} - [ {},{} ] )".format( num_to_text[ od_midi_note.valor ], index+1, format_location( od_midi_note.pos ), od_midi_note.valor, od_midi_note.pos ), True )
+						#If the od starts right after the drum fill give a warning
+						elif( od_midi_note.pos == fill_end[index] ):
+							overlap_fill_overdrive_end.append( notas_item.pos )
+							debug( "Found {} starting right after in Fill #{} at {} - [ {},{} ] )".format( num_to_text[ od_midi_note.valor ], index+1, format_location( od_midi_note.pos ), od_midi_note.valor, od_midi_note.pos ), True )
+						#Is a regular overlpa so error message
+						else:
+							overlap_fill_overdrive.append( notas_item.pos )
+							debug( "Found {} overlap in Fill #{} at {} - [ {},{} ] )".format( num_to_text[ od_midi_note.valor ], index+1, format_location( od_midi_note.pos ), od_midi_note.valor, od_midi_note.pos ), True )
+					if( midi_check == 126 ):
+						overlap_fill_drum_roll.append( notas_item.pos )
+						debug( "Found {} overlap in Fill #{} at {} - [ {},{} ] )".format( num_to_text[ od_midi_note.valor ], index+1, format_location( od_midi_note.pos ), od_midi_note.valor, od_midi_note.pos ), True )
+
+				#We only need this to be printed once.. 
+				if( midi_check == 116 ):
+					debug( "Fill #{} starts at {} ends at {} - [ {},{} ]".format( index+1, format_location( item ), format_location( fill_end[index] ), item, fill_end[index] ) ,True )
 		
-		for index, item in enumerate(fill_start):
-			debug( "{}, {}".format(index, item) ,True )
-			debug( "Ends at {}".format(fill_end[index]) ,True )
-					
 		
-		debug(str(fill_start),True)
-		debug(str(fill_end),True)
-		
-		#Let's calculate some totals
+		debug( "=================== ENDS GENERAL DRUMS: Drum Fills (OD and Drum Roll Validation) ===================", True )
+		#
 		total_kicks_x = len( filter(lambda x: x.valor == 96, l_gems) )
 		total_kicks_h = len( filter(lambda x: x.valor == 84, l_gems) )
 		total_kicks_m = len( filter(lambda x: x.valor == 72, l_gems) )
 		total_kicks_e = len( filter(lambda x: x.valor == 60, l_gems) )
+		total_fills 	= len( fill_start )
+		#
+		debug( "", True )
+		debug( "=================== TOTAL DRUMS: Some numbers and stats ===================", True )
 		debug( "Kicks: X({}) H({}) M({}) E({})".format( total_kicks_x, total_kicks_h, total_kicks_m, total_kicks_e ), True )
-
+		debug( "Total of Fills: {}".format( total_fills ), True )
+		debug( "OD Starts at fill start: {}".format( len( overlap_fill_overdrive_start ) ), True )
+		debug( "OD Starts at fill end: {}".format( len( overlap_fill_overdrive_end ) ), True )
+		debug( "OD Overlap: {}".format( len( overlap_fill_overdrive ) ), True )
+		debug( "Drum Roll Overlap: {}".format( len( overlap_fill_drum_roll ) ), True )
+		debug( "=================== ENDS TOTAL DRUMS: Some numbers and stats ===================", True )
+		
 		#Save all variable sin DICT for output
 		drumTmpl["drums_total_kicks_x"] = total_kicks_x
 		drumTmpl["drums_total_kicks_h"] = total_kicks_h
 		drumTmpl["drums_total_kicks_m"] = total_kicks_m
 		drumTmpl["drums_total_kicks_e"] = total_kicks_e
+		drumTmpl["drums_total_fills"] = total_fills
 		
 		return drumTmpl
 
@@ -348,15 +384,17 @@ def handle_guitar(content):
 			99 : "Expert Blue",
 			98 : "Expert Yellow", 
 			97 : "Expert Red",
-			96 : "Expert Green",
-			90 : "Hard Green", 
-			89 : "Force HOPO Off", 
+			96 : "Expert Green",			
+			90 : "Force HOPO Off", 
+			89 : "Force HOPO On", 
 			88 : "Hard Orange", 
 			87 : "Hard Blue",
 			86 : "Hard Yellow", 
 			85 : "Hard Red",
-			84 : "Hard Orange",
-			76 : "Medium Green", 
+			84 : "Hard Green",
+			78 : "Medium Force HOPO Off", 
+			77 : "Medium Force HOPO On", 
+			76 : "Medium Orange", 
 			75 : "Medium Blue",
 			74 : "Medium Yellow", 
 			73 : "Medium Red",
@@ -368,6 +406,204 @@ def handle_guitar(content):
 			60 : "Easy Green",
 			#40-59 Hand animations
 		}
+		#debug (content, True)
+		#
+		all_e_notes = re.findall("^([E,e]\s[a-f,0-9]+\s[a-f,0-9]+\s[a-f,0-9]+\s[a-f,0-9]+)$", content, re.MULTILINE)
+		all_x_notes = re.findall("^<(X\s[a-f,0-9]+\s[a-f,0-9]+)$", content, re.I | re.MULTILINE)
+		all_notes = all_x_notes + all_e_notes
+		noteloc = 0;
+		decval="";
+		
+		for elem in all_notes:
+			decval = 0;
+			midi_parts = elem.split()
+			
+			if( midi_parts[0].lower() == 'e' ):
+				decval = int( midi_parts[3], 16 )
+			
+			noteloc = int( noteloc ) + int( midi_parts[1] );			
+
+			#Just parse or debug those notes that are really in the chart
+			#we can exclude notes off, text events, etc.
+			if( midi_parts[0].lower() == 'e' and re.search("^9", midi_parts[2] ) ):
+				l_gems.append( Nota(decval, noteloc) )
+				debug("Starts with 9: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
+				debug( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
+			elif( midi_parts[0].lower() == 'e' and re.search("^8", midi_parts[2] ) ):			
+				r_gems.append( Nota(decval, noteloc) )
+				debug("Starts with 8: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
+				debug( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
+			else:
+				#debug("Text Event: Midi # {}, MBT {}, Type {}, Extra {} ".format( str( decval ), str( noteloc ),str( midi_parts[1] ),str( midi_parts[2] ) ) )
+				#debug( "{} at {}".format( "None", format_location( noteloc ) ), True )
+				debug("")
+		
+		
+#GUITAR/BASS
+#- Expert
+#--- LEGACY: No three note chords containing both green and orange
+#--- LEGACY: No four or more note chords
+#- Hard
+#--- LEGACY: No three note chords
+#--- LEGACY: No green + orange chords
+#--- LEGACY: If chord on Expert then chord here
+#- Medium
+#--- LEGACY: No green+blue / green+orange / red+orange chords
+#--- LEGACY: No forced HOPOs
+#--- LEGACY: If chord on Expert then chord here
+#- Easy
+#--- LEGACY: No chords
+#- General
+#--- LEGACY: If a color is used on expert, then it must be used on all difficulties (Pending)
+		
+		#Get three chords containing B+O
+		debug( "", True )
+		debug( "=================== EXPERT GUITAR: 3 chords containing B+O ===================", True )
+		counter_positions = Counter() #All positions with 3 gems chord having G+O		
+		counter_global = Counter()				
+		extra_gems_chords = Counter()
+		for notas_item in filter(lambda x: ( x.valor == 97 or x.valor == 98 or x.valor == 99 ) , l_gems):
+			#We got all red, yellow and blue notes positions, now we want to seearch if there is any other gem in the same position being ggreen AND orange
+			#How many G+O we have?
+			if( len( filter(lambda x: x.pos == notas_item.pos and ( x.valor == 96 or x.valor == 100) , l_gems) ) == 2 ):
+				extra_gems_chords[ ( notas_item.pos, notas_item.valor ) ] += 1
+				if( counter_positions[ notas_item.pos ] < 1 ):
+					counter_positions[notas_item.pos] += 1
+				debug( "Found {} paired with Green and Orange gems at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ), notas_item.valor , notas_item.pos ), True ) 
+		
+		#debug(str(extra_gems_chords), True)
+		debug( "=================== ENDS EXPERT GUITAR: 3 chords containing B+O ===================", True )
+		
+		#Get all chords in expert with 4 or more gems
+		counter = Counter() #
+		counter_4_notes = Counter() #
+		counter_internal = 0		
+		counter_chord_expert = Counter() #Holds all chords in the expert chart to compare later on		
+		debug( "", True )
+		debug( "=================== EXPERT GUITAR: 4 notes Chords ===================", True )		
+		for index, item in enumerate(l_gems):
+			if( counter[ item.pos ] < 1 ):
+				for midi_note in filter(lambda x: x.pos == item.pos and ( x.valor >= 96 and x.valor <= 100 ), l_gems ):
+					debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.valor , midi_note.pos ), True ) 
+					counter_internal += 1
+				if( counter_internal >=4 ):
+					debug( "Found 4 notes chord at {} - ( {} )".format( format_location( item.pos ), item.pos ), True ) 
+				elif(counter_internal >=2):
+					counter_chord_expert[ item.pos ] = 1
+					debug_extra( "This is a valid chord with {} notes".format(counter_internal), True ) 
+				
+				counter_internal = 0			
+			counter[ item.pos ] = 1
+		debug( "=================== EXPERT GUITAR: 4 notes Chords ===================", True )
+		
+		#Get all chords in hard with 3 or more gems
+		counter = Counter() #
+		counter_internal = 0	
+		debug( "", True )
+		debug( "=================== HARD GUITAR: 3 notes Chords ===================", True )			
+		for index, item in enumerate(l_gems):
+			if( counter[ item.pos ] < 1 ):
+				for midi_note in filter(lambda x: x.pos == item.pos and ( x.valor >= 84 and x.valor <= 88 ), l_gems ):
+					debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.valor , midi_note.pos ), True ) 
+					counter_internal += 1
+				if( counter_internal >=3 ):
+					debug( "Found 3 notes chord at {} - ( {} )".format( format_location( item.pos ), item.pos ), True ) 
+				elif(counter_internal <=1):
+					debug_extra("Single {} note found at {} - ( {},{} )".format(num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.valor , midi_note.pos), True)
+					if( counter_chord_expert[ midi_note.pos ] > 0 ):
+						debug("Expert chord not found here at {} - ( {} )".format( format_location( midi_note.pos ), midi_note.pos), True)
+					
+				counter_internal = 0			
+			counter[ item.pos ] = 1
+		debug( "=================== ENDS HARD GUITAR: 3 notes Chords ===================", True )
+		
+		#No green + orange chords
+		counter = Counter() #
+		counter_internal = 0	
+		debug( "", True )
+		debug( "=================== HARD GUITAR: Green + Orange chords ===================", True )			
+		for index, item in enumerate(l_gems):
+			if( counter[ item.pos ] < 1 ):
+				for midi_note in filter(lambda x: x.pos == item.pos and ( x.valor == 84 or x.valor == 88 ), l_gems ):
+					debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.valor , midi_note.pos ), True ) 
+					counter_internal += 1
+				if( counter_internal >=2 ):
+					debug( "Found Green and Orange chord at {} - ( {} )".format( format_location( item.pos ), item.pos ), True ) 
+				
+				counter_internal = 0			
+			counter[ item.pos ] = 1
+		debug( "=================== ENDS HARD GUITAR: Green + Orange chords ===================", True )
+		
+		#No green+blue / green+orange / red+orange chords
+		midi_notes = [ [72, 75], [72, 76], [73, 76] ]
+		chord_combination = [ 'Green + Blue','Green + Orange','Red + Orange' ]
+		debug( "", True )
+		debug( "=================== MEDIUM GUITAR: green+blue / green+orange / red+orange chords ===================", True )		
+		for idx_notes, item_note in enumerate(midi_notes):
+			counter = Counter() #
+			counter_internal = 0			
+			for index, item in enumerate(l_gems):
+				if( counter[ item.pos ] < 1 ):
+					for midi_note in filter(lambda x: x.pos == item.pos and ( x.valor == item_note[0] or x.valor == item_note[1] ), l_gems ):
+						debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.valor , midi_note.pos ), True ) 
+						counter_internal += 1
+					if( counter_internal >=2 ):
+						debug( "Found {} chord at {} - ( {} )".format( chord_combination[ idx_notes ], format_location( item.pos ), item.pos ), True ) 
+					
+					counter_internal = 0			
+				counter[ item.pos ] = 1
+		debug( "=================== ENDS MEDIUM GUITAR: green+blue / green+orange / red+orange chords ===================", True )
+		
+		#No forced hopos
+		counter = Counter() #
+		counter_internal = 0	
+		debug( "", True )
+		debug( "=================== MEDIUM GUITAR: No Force hopos ===================", True )			
+		#for index, item in enumerate(l_gems):
+		for midi_note in filter(lambda x: x.valor == 77 or x.valor == 78 , l_gems ):
+			debug( "Found {} at {} - ( {} )".format( num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.pos ), True ) 
+		debug( "=================== ENDS MEDIUM GUITAR: No Force hopos ===================", True )			
+		
+		#No expert chords in medium
+		counter = Counter() #
+		counter_internal = 0	
+		debug( "", True )
+		debug( "=================== MEDIUM GUITAR: No expert chords ===================", True )			
+		for item in counter_chord_expert:
+			if( len(filter(lambda x: x.pos == item and ( x.valor >= 72 and x.valor <= 76 ), l_gems )) == 1 ):
+				debug("Expert chord not found here at {} - ( {} )".format( format_location( item ), item), True)
+		debug( "=================== ENDS MEDIUM GUITAR: No expert chords ===================", True )				
+		
+		#No chords allowed in easy
+		counter = Counter() #
+		counter_internal = 0	
+		list1 = [60,61,62,63,64]
+		list2 = [60,61,62,63,64]
+		debug( "", True )
+		debug( "=================== MEDIUM GUITAR: No expert chords ===================", True )	
+		
+		debug( "", True )
+		debug( "=================== EASY GUITAR: No Chords ===================", True )			
+		
+		
+		
+		#for notas_item in filter(lambda x: x.valor >= 120 and x.valor <= 76 , l_gems):
+		#	if( len(filter(lambda x: x.pos == item and ( x.valor >= 72 and x.valor <= 76 ), l_gems )) == 1 ):
+		#		debug("Expert chord not found here at {} - ( {} )".format( format_location( item ), item), True)
+		debug( "=================== ENDS EASY GUITAR: No Chords ===================", True )			
+			
+		#Some totals
+		debug( "", True )
+		debug( "=================== TOTAL GUITAR: Some numbers and stats ===================", True )
+		debug( "Three notes including G+O gems: {}".format( len( counter_positions ) ), True )
+		debug( "Expert Four notes chords: {}".format( len( counter_4_notes ) ), True )
+		debug( "Four notes chords: {}".format( len( counter_4_notes ) ), True )
+		debug( "Total chords in Expert chart: {}".format( len( counter_chord_expert ) ), True )
+		debug( "=================== ENDS TOTAL GUITAR: Some numbers and stats ===================", True )
+		
+		
+		#counter_positions loop this to get the positions with 3 or more chord G+O
+		
 		return guitarTmpl
 
 def handle_bass(content):
@@ -444,6 +680,12 @@ def debug( output_content, add_new_line=False ):
 		f.write( output_content + '\n')
 	else:
 		f.write( output_content )
+
+def debug_extra( output_content, add_new_line=False ):
+	if add_new_line: 
+		f.write( "debug_extra :: " + output_content + '\n')
+	else:
+		f.write( "debug_extra :: " + output_content )
 		
 	
 #Map functions to handlers
@@ -490,7 +732,7 @@ with open(OUTPUT_FILE, 'w') as f:
 			#console_msg( part[0] );			
 			func = switch_map.get(part[0], None)
 			if func:
-				#console_msg("Executing function to handle %s" % part[0])
+				debug("########################### Executing function to handle %s" % part[0] , True)
 				fTmpl = func(track_content)
 				dTmpl.update(fTmpl)
 		
