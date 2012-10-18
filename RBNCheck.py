@@ -19,9 +19,10 @@
 #--- LEGACY: No forced HOPOs
 #--- LEGACY: If chord on Expert then chord here
 #- Easy
-#--- LEGACY: No chords (Pending)
+#--- LEGACY: No chords
 #- General
 #--- LEGACY: If a color is used on expert, then it must be used on all difficulties (Pending)
+#--- NEW: No gems under solo marker
 #
 #DRUMS
 #- General
@@ -35,40 +36,40 @@
 #--- LEGACY: No Kicks with Gems
 #
 #VOCALS
-#--- LEGACY: Must be space between each note 
-#--- LEGACY: Illegal character check: comma, quotation marks
-#--- LEGACY: Possible bad character warning: period
-#--- LEGACY: First character of phrase capitalization check
-#--- LEGACY: Check word after ! or ? is capitalized
-#--- LEGACY: Check all mid-phrase capitalization
+#--- LEGACY: Must be space between each note (Pending)
+#--- LEGACY: Illegal character check: comma, quotation marks (Pending)
+#--- LEGACY: Possible bad character warning: period (Pending)
+#--- LEGACY: First character of phrase capitalization check (Pending)
+#--- LEGACY: Check word after ! or ? is capitalized (Pending)
+#--- LEGACY: Check all mid-phrase capitalization (Pending)
 #
 #KEYS (5 Lane)
 #- Expert
-#--- LEGACY: No four or more note chords
+#--- LEGACY: No four or more note chords (Pending)
 #- Hard
-#--- LEGACY: No four or more note chords
+#--- LEGACY: No four or more note chords (Pending)
 #- Medium
-#--- LEGACY: No three note chords
+#--- LEGACY: No three note chords (Pending)
 #- Easy
-#--- LEGACY: No chords
+#--- LEGACY: No chords (Pending)
 #- General
-#--- LEGACY: If a color is used on expert, then it must be used on all difficulties
+#--- LEGACY: If a color is used on expert, then it must be used on all difficulties (Pending)
 #
 #PRO KEYS 
 #- Hard
-#--- LEGACY: No four note chords
+#--- LEGACY: No four note chords (Pending)
 #- Medium
-#--- LEGACY: No three note chords
+#--- LEGACY: No three note chords (Pending)
 #- Easy
-#--- LEGACY: No chords
+#--- LEGACY: No chords (Pending)
 #
 #EVENTS
-#--- LEGACY: Error if not a Text Event or Track Name type
+#--- LEGACY: Error if not a Text Event or Track Name type (Pending)
 #
 #GENERAL
-#--- LEGACY: Overdrive unison chart
-#--- LEGACY: Error if Keys and Pro Keys ODs aren't exact same
-#--- LEGACY: Error if Vocals and Harmony1 ODs aren't exact same.
+#--- LEGACY: Overdrive unison chart (Pending)
+#--- LEGACY: Error if Keys and Pro Keys ODs aren't exact same (Pending)
+#--- LEGACY: Error if Vocals and Harmony1 ODs aren't exact same. (Pending)
 #
 import os
 import re
@@ -198,7 +199,7 @@ def handle_drums(content):
 			else:
 				#debug("Text Event: Midi # {}, MBT {}, Type {}, Extra {} ".format( str( decval ), str( noteloc ),str( midi_parts[1] ),str( midi_parts[2] ) ) )
 				#debug( "{} at {}".format( "None", format_location( noteloc ) ), True )
-				debug("")
+				debug("")		
 		#Get all kicks in Easy and check for errors (K+GEM)
 		#Also we check for non existent gems on expert
 		debug( "", True )
@@ -233,6 +234,8 @@ def handle_drums(content):
 		#debug(str(tempo), True)
 		debug( "=================== ENDS MEDIUM DRUMS: Error Kick + 2 Gems ===================", True )
 		
+		debug( "", True )
+		debug( "=================== MISSING GEMS LOWER DIFFICULTIES ===================", True )		
 		#Get all the gems in expert to compare whats missing in lower difficulties
 		all_o_expert = Counter()
 		all_r_expert = Counter()
@@ -248,10 +251,7 @@ def handle_drums(content):
 		for notas_item in filter(lambda x: x.valor == 99, l_gems):
 			all_b_expert[ notas_item.pos ] = 1
 		for notas_item in filter(lambda x: x.valor == 100, l_gems):
-			all_g_expert[ notas_item.pos ] = 1
-		
-		debug( "", True )
-		debug( "=================== MISSING GEMS LOWER DIFFICULTIES ===================", True )
+			all_g_expert[ notas_item.pos ] = 1		
 		midi_notes = [ [60, 72, 84], [61, 73, 85], [62, 74, 86], [63, 75, 87], [64, 76, 88]]
 		#Kicks
 		for midi_note in midi_notes[0]:
@@ -276,7 +276,7 @@ def handle_drums(content):
 		#Green (Tom / Cymbal)
 		for midi_note in midi_notes[4]:
 			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
-				if not ( all_b_expert[ notas_item.pos ] ):
+				if not ( all_g_expert[ notas_item.pos ] ):
 					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
 		debug( "=================== ENDS MISSING GEMS LOWER DIFFICULTIES===================", True )
 		
@@ -437,25 +437,6 @@ def handle_guitar(content):
 				#debug("Text Event: Midi # {}, MBT {}, Type {}, Extra {} ".format( str( decval ), str( noteloc ),str( midi_parts[1] ),str( midi_parts[2] ) ) )
 				#debug( "{} at {}".format( "None", format_location( noteloc ) ), True )
 				debug("")
-		
-		
-#GUITAR/BASS
-#- Expert
-#--- LEGACY: No three note chords containing both green and orange
-#--- LEGACY: No four or more note chords
-#- Hard
-#--- LEGACY: No three note chords
-#--- LEGACY: No green + orange chords
-#--- LEGACY: If chord on Expert then chord here
-#- Medium
-#--- LEGACY: No green+blue / green+orange / red+orange chords
-#--- LEGACY: No forced HOPOs
-#--- LEGACY: If chord on Expert then chord here
-#- Easy
-#--- LEGACY: No chords
-#- General
-#--- LEGACY: If a color is used on expert, then it must be used on all difficulties (Pending)
-		
 		#Get three chords containing B+O
 		debug( "", True )
 		debug( "=================== EXPERT GUITAR: 3 chords containing B+O ===================", True )
@@ -501,7 +482,7 @@ def handle_guitar(content):
 		counter_internal = 0	
 		debug( "", True )
 		debug( "=================== HARD GUITAR: 3 notes Chords ===================", True )			
-		for index, item in enumerate(l_gems):
+		for index, item in enumerate(filter(lambda x: x.valor >= 84 and x.valor <= 88 , l_gems )):
 			if( counter[ item.pos ] < 1 ):
 				for midi_note in filter(lambda x: x.pos == item.pos and ( x.valor >= 84 and x.valor <= 88 ), l_gems ):
 					debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.valor , midi_note.pos ), True ) 
@@ -509,9 +490,9 @@ def handle_guitar(content):
 				if( counter_internal >=3 ):
 					debug( "Found 3 notes chord at {} - ( {} )".format( format_location( item.pos ), item.pos ), True ) 
 				elif(counter_internal <=1):
-					debug_extra("Single {} note found at {} - ( {},{} )".format(num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.valor , midi_note.pos), True)
-					if( counter_chord_expert[ midi_note.pos ] > 0 ):
-						debug("Expert chord not found here at {} - ( {} )".format( format_location( midi_note.pos ), midi_note.pos), True)
+					debug_extra("Single {} note found at {} - ( {},{} )".format(num_to_text[ item.valor ], format_location( item.pos ), item.valor , item.pos), True)
+					if( counter_chord_expert[ item.pos ] > 0 ):
+						debug("Expert chord not found here at {} - ( {} )".format( format_location( item.pos ), item.pos), True)
 					
 				counter_internal = 0			
 			counter[ item.pos ] = 1
@@ -575,41 +556,426 @@ def handle_guitar(content):
 		debug( "=================== ENDS MEDIUM GUITAR: No expert chords ===================", True )				
 		
 		#No chords allowed in easy
-		counter = Counter() #
-		counter_internal = 0	
-		list1 = [60,61,62,63,64]
-		list2 = [60,61,62,63,64]
+		counter = Counter()
+		gems_in_chord = Counter()
 		debug( "", True )
-		debug( "=================== MEDIUM GUITAR: No expert chords ===================", True )	
+		debug( "=================== EASY GUITAR: No Chords ===================", True )
+		for notas_item in filter(lambda x: x.valor >= 60 and x.valor <= 64, l_gems):
+			debug_extra( "Found {} at {} - ( {}, {}): ".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ), notas_item.valor , notas_item.pos ), True ) 
+			counter_global[(notas_item.pos)] += 1
+			gems_in_chord[ ( notas_item.pos, notas_item.valor ) ] += 1
+		debug_extra("Validating chords....", True)
+		#Do we have more than one gem on top of kicks in this particular position?
+		for (a, b) in enumerate(counter_global):			
+			if( counter_global[b]>1 ):
+				gems_text = ''
+				for x, v in filter(lambda (x,y): x == b, gems_in_chord.keys() ):
+					gems_text = gems_text + num_to_text[ v ] + " + "
+				debug( "Found {} chord at {} - ( {} )".format( gems_text[:-3], format_location( b ), b ), True ) 	
+		counter_chord_easy = filter(lambda (x,y): y >= 2, counter_global.iteritems())
+		debug( "=================== ENDS EASY GUITAR: No Chords ===================", True )
 		
+		#No gems under solo marker
+		solo_start = []
+		solo_end = []
+		counter = Counter()
+		gems_in_solo = Counter()
 		debug( "", True )
-		debug( "=================== EASY GUITAR: No Chords ===================", True )			
-		
-		
-		
-		#for notas_item in filter(lambda x: x.valor >= 120 and x.valor <= 76 , l_gems):
-		#	if( len(filter(lambda x: x.pos == item and ( x.valor >= 72 and x.valor <= 76 ), l_gems )) == 1 ):
-		#		debug("Expert chord not found here at {} - ( {} )".format( format_location( item ), item), True)
-		debug( "=================== ENDS EASY GUITAR: No Chords ===================", True )			
+		debug( "=================== GENERAL GUITAR: No gems under solo marker ===================", True )
+		#Start notes
+		for notas_item in filter(lambda x: x.valor == 103 , l_gems):
+			solo_start.append( notas_item.pos )
+			debug_extra( "Found start {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 
+		#End notes
+		for notas_item in filter(lambda x: x.valor == 103 , r_gems):
+			solo_end.append( notas_item.pos )			
+			debug_extra( "Found end {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True )		
+		#Check for any gem under solo marker... we need at least one gem for the solo to be valid
+		#for midi_check in [60,61,62,63,64,72,73,74,75,76,84,85,86,87,88,96,97,98,99,100]:			
+		for index, item in enumerate(solo_start):
+			gems_text = '';
+			if ( filter(lambda x: x.valor >=60 and x.valor <=64 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Easy + '
+			if ( filter(lambda x: x.valor >=72 and x.valor <=76 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Medium + '
+			if ( filter(lambda x: x.valor >=84 and x.valor <=88 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Hard + '
+			if ( filter(lambda x: x.valor >=96 and x.valor <=100 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Expert + '
 			
+			debug( "INFO: Solo Marker #{} starts at {} ends at {} - [ {},{} ]".format( index+1, format_location( item ), format_location( solo_end[index] ), item, solo_end[index] ) ,True )
+			
+			if( counter[ item ] < 4 ):
+				debug( "ERROR: Gems are missing from at least one difficulty at Solo Marker #{}. Only found {} gems".format( index+1, gems_text[:-3] ) ,True )
+		debug( "=================== ENDS GENERAL GUITAR: No gems under solo marker ===================", True )
+		
+		debug( "", True )
+		debug( "=================== GENERAL: NO MATCHING GEMS ON EXPERT ===================", True )		
+		#Get all the gems in expert to compare whats missing in lower difficulties
+		all_g_expert = Counter()
+		all_r_expert = Counter()
+		all_y_expert = Counter()
+		all_b_expert = Counter()
+		all_o_expert = Counter()
+		for notas_item in filter(lambda x: x.valor == 96, l_gems):
+			all_g_expert[ notas_item.pos ] = 1
+		for notas_item in filter(lambda x: x.valor == 97, l_gems):
+			all_r_expert[ notas_item.pos ] = 1
+		for notas_item in filter(lambda x: x.valor == 98, l_gems):
+			all_y_expert[ notas_item.pos ] = 1
+		for notas_item in filter(lambda x: x.valor == 99, l_gems):
+			all_b_expert[ notas_item.pos ] = 1
+		for notas_item in filter(lambda x: x.valor == 100, l_gems):
+			all_o_expert[ notas_item.pos ] = 1		
+		midi_notes = [ [60, 72, 84], [61, 73, 85], [62, 74, 86], [63, 75, 87], [64, 76, 88]]	
+		#Green
+		for midi_note in midi_notes[0]:
+			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				if not ( all_g_expert[ notas_item.pos ] ):
+					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+		#Red
+		for midi_note in midi_notes[1]:
+			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				if not ( all_r_expert[ notas_item.pos ] ):
+					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+		#Yellow
+		for midi_note in midi_notes[2]:
+			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				if not ( all_y_expert[ notas_item.pos ] ):
+					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+		#Blue
+		for midi_note in midi_notes[3]:
+			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				if not ( all_b_expert[ notas_item.pos ] ):
+					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+		#Orange
+		for midi_note in midi_notes[4]:
+			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				if not ( all_o_expert[ notas_item.pos ] ):
+					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+		debug( "=================== ENDS GENERAL: NO MATCHING GEMS ON EXPERT ===================", True )
+		
 		#Some totals
 		debug( "", True )
 		debug( "=================== TOTAL GUITAR: Some numbers and stats ===================", True )
 		debug( "Three notes including G+O gems: {}".format( len( counter_positions ) ), True )
 		debug( "Expert Four notes chords: {}".format( len( counter_4_notes ) ), True )
 		debug( "Four notes chords: {}".format( len( counter_4_notes ) ), True )
-		debug( "Total chords in Expert chart: {}".format( len( counter_chord_expert ) ), True )
-		debug( "=================== ENDS TOTAL GUITAR: Some numbers and stats ===================", True )
+		debug( "Total Solo Markers: {}".format( len( solo_start ) ), True )
+		debug( "=================== ENDS TOTAL GUITAR: Some numbers and stats ===================", True )		
 		
-		
-		#counter_positions loop this to get the positions with 3 or more chord G+O
-		
+		#counter_positions loop this to get the positions with 3 or more chord G+O		
 		return guitarTmpl
 
 def handle_bass(content):
 		l_gems = []
-		guitarTmpl = {}
-		return guitarTmpl
+		r_gems = []
+		bassTmpl = {}
+		has_bass = True
+		num_to_text = {
+			127 : "TRILL MARKER", 
+      126 : "TREMOLO MARKER",
+			124 : "BRE", 
+			123 : "BRE",
+			122 : "BRE",
+			121 : "BRE", 
+			120 : "BRE",
+			116 : "Overdrive",
+			103 : "Solo Marker", 
+			102 : "Expert Force HOPO Off", 
+			101 : "Expert Force HOPO On", 
+			100 : "Expert Orange", 
+			99 : "Expert Blue",
+			98 : "Expert Yellow", 
+			97 : "Expert Red",
+			96 : "Expert Green",			
+			90 : "Force HOPO Off", 
+			89 : "Force HOPO On", 
+			88 : "Hard Orange", 
+			87 : "Hard Blue",
+			86 : "Hard Yellow", 
+			85 : "Hard Red",
+			84 : "Hard Green",
+			78 : "Medium Force HOPO Off", 
+			77 : "Medium Force HOPO On", 
+			76 : "Medium Orange", 
+			75 : "Medium Blue",
+			74 : "Medium Yellow", 
+			73 : "Medium Red",
+			72 : "Medium Green",
+			64 : "Easy Orange", 
+			63 : "Easy Blue",
+			62 : "Easy Yellow", 
+			61 : "Easy Red",
+			60 : "Easy Green",
+			#40-59 Hand animations
+		}
+		#debug (content, True)
+		#
+		all_e_notes = re.findall("^([E,e]\s[a-f,0-9]+\s[a-f,0-9]+\s[a-f,0-9]+\s[a-f,0-9]+)$", content, re.MULTILINE)
+		all_x_notes = re.findall("^<(X\s[a-f,0-9]+\s[a-f,0-9]+)$", content, re.I | re.MULTILINE)
+		all_notes = all_x_notes + all_e_notes
+		noteloc = 0;
+		decval="";
+		
+		for elem in all_notes:
+			decval = 0;
+			midi_parts = elem.split()
+			
+			if( midi_parts[0].lower() == 'e' ):
+				decval = int( midi_parts[3], 16 )
+			
+			noteloc = int( noteloc ) + int( midi_parts[1] );			
+
+			#Just parse or debug those notes that are really in the chart
+			#we can exclude notes off, text events, etc.
+			if( midi_parts[0].lower() == 'e' and re.search("^9", midi_parts[2] ) ):
+				l_gems.append( Nota(decval, noteloc) )
+				debug("Starts with 9: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
+				debug( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
+			elif( midi_parts[0].lower() == 'e' and re.search("^8", midi_parts[2] ) ):			
+				r_gems.append( Nota(decval, noteloc) )
+				debug("Starts with 8: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
+				debug( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
+			else:
+				#debug("Text Event: Midi # {}, MBT {}, Type {}, Extra {} ".format( str( decval ), str( noteloc ),str( midi_parts[1] ),str( midi_parts[2] ) ) )
+				#debug( "{} at {}".format( "None", format_location( noteloc ) ), True )
+				debug("")
+		#Get three chords containing B+O
+		debug( "", True )
+		debug( "=================== EXPERT BASS: 3 chords containing B+O ===================", True )
+		counter_positions = Counter() #All positions with 3 gems chord having G+O		
+		counter_global = Counter()				
+		extra_gems_chords = Counter()
+		for notas_item in filter(lambda x: ( x.valor == 97 or x.valor == 98 or x.valor == 99 ) , l_gems):
+			#We got all red, yellow and blue notes positions, now we want to seearch if there is any other gem in the same position being ggreen AND orange
+			#How many G+O we have?
+			if( len( filter(lambda x: x.pos == notas_item.pos and ( x.valor == 96 or x.valor == 100) , l_gems) ) == 2 ):
+				extra_gems_chords[ ( notas_item.pos, notas_item.valor ) ] += 1
+				if( counter_positions[ notas_item.pos ] < 1 ):
+					counter_positions[notas_item.pos] += 1
+				debug( "Found {} paired with Green and Orange gems at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ), notas_item.valor , notas_item.pos ), True ) 
+		
+		#debug(str(extra_gems_chords), True)
+		debug( "=================== ENDS EXPERT BASS: 3 chords containing B+O ===================", True )
+		
+		#Get all chords in expert with 4 or more gems
+		counter = Counter() #
+		counter_4_notes = Counter() #
+		counter_internal = 0		
+		counter_chord_expert = Counter() #Holds all chords in the expert chart to compare later on		
+		debug( "", True )
+		debug( "=================== EXPERT BASS: 4 notes Chords ===================", True )		
+		for index, item in enumerate(l_gems):
+			if( counter[ item.pos ] < 1 ):
+				for midi_note in filter(lambda x: x.pos == item.pos and ( x.valor >= 96 and x.valor <= 100 ), l_gems ):
+					debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.valor , midi_note.pos ), True ) 
+					counter_internal += 1
+				if( counter_internal >=4 ):
+					debug( "Found 4 notes chord at {} - ( {} )".format( format_location( item.pos ), item.pos ), True ) 
+				elif(counter_internal >=2):
+					counter_chord_expert[ item.pos ] = 1
+					debug_extra( "This is a valid chord with {} notes".format(counter_internal), True ) 
+				
+				counter_internal = 0			
+			counter[ item.pos ] = 1
+		debug( "=================== EXPERT BASS: 4 notes Chords ===================", True )
+		
+		#Get all chords in hard with 3 or more gems
+		counter = Counter() #
+		counter_internal = 0	
+		debug( "", True )
+		debug( "=================== HARD BASS: 3 notes Chords ===================", True )			
+		for index, item in enumerate(filter(lambda x: x.valor >= 84 and x.valor <= 88 , l_gems )):
+			if( counter[ item.pos ] < 1 ):
+				for midi_note in filter(lambda x: x.pos == item.pos and ( x.valor >= 84 and x.valor <= 88 ), l_gems ):
+					debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.valor , midi_note.pos ), True ) 
+					counter_internal += 1
+				if( counter_internal >=3 ):
+					debug( "Found 3 notes chord at {} - ( {} )".format( format_location( item.pos ), item.pos ), True ) 
+				elif(counter_internal <=1):
+					debug_extra("Single {} note found at {} - ( {},{} )".format(num_to_text[ item.valor ], format_location( item.pos ), item.valor , item.pos), True)
+					if( counter_chord_expert[ item.pos ] > 0 ):
+						debug("Expert chord not found here at {} - ( {} )".format( format_location( item.pos ), item.pos), True)
+					
+				counter_internal = 0			
+			counter[ item.pos ] = 1
+		debug( "=================== ENDS HARD BASS: 3 notes Chords ===================", True )
+		
+		#No green + orange chords
+		counter = Counter() #
+		counter_internal = 0	
+		debug( "", True )
+		debug( "=================== HARD BASS: Green + Orange chords ===================", True )			
+		for index, item in enumerate(l_gems):
+			if( counter[ item.pos ] < 1 ):
+				for midi_note in filter(lambda x: x.pos == item.pos and ( x.valor == 84 or x.valor == 88 ), l_gems ):
+					debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.valor , midi_note.pos ), True ) 
+					counter_internal += 1
+				if( counter_internal >=2 ):
+					debug( "Found Green and Orange chord at {} - ( {} )".format( format_location( item.pos ), item.pos ), True ) 
+				
+				counter_internal = 0			
+			counter[ item.pos ] = 1
+		debug( "=================== ENDS HARD BASS: Green + Orange chords ===================", True )
+		
+		#No green+blue / green+orange / red+orange chords
+		midi_notes = [ [72, 75], [72, 76], [73, 76] ]
+		chord_combination = [ 'Green + Blue','Green + Orange','Red + Orange' ]
+		debug( "", True )
+		debug( "=================== MEDIUM BASS: green+blue / green+orange / red+orange chords ===================", True )		
+		for idx_notes, item_note in enumerate(midi_notes):
+			counter = Counter() #
+			counter_internal = 0			
+			for index, item in enumerate(l_gems):
+				if( counter[ item.pos ] < 1 ):
+					for midi_note in filter(lambda x: x.pos == item.pos and ( x.valor == item_note[0] or x.valor == item_note[1] ), l_gems ):
+						debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.valor , midi_note.pos ), True ) 
+						counter_internal += 1
+					if( counter_internal >=2 ):
+						debug( "Found {} chord at {} - ( {} )".format( chord_combination[ idx_notes ], format_location( item.pos ), item.pos ), True ) 
+					
+					counter_internal = 0			
+				counter[ item.pos ] = 1
+		debug( "=================== ENDS MEDIUM BASS: green+blue / green+orange / red+orange chords ===================", True )
+		
+		#No forced hopos
+		counter = Counter() #
+		counter_internal = 0	
+		debug( "", True )
+		debug( "=================== MEDIUM BASS: No Force hopos ===================", True )			
+		#for index, item in enumerate(l_gems):
+		for midi_note in filter(lambda x: x.valor == 77 or x.valor == 78 , l_gems ):
+			debug( "Found {} at {} - ( {} )".format( num_to_text[ midi_note.valor ], format_location( midi_note.pos ), midi_note.pos ), True ) 
+		debug( "=================== ENDS MEDIUM BASS: No Force hopos ===================", True )			
+		
+		#No expert chords in medium
+		counter = Counter() #
+		counter_internal = 0	
+		debug( "", True )
+		debug( "=================== MEDIUM BASS: No expert chords ===================", True )			
+		for item in counter_chord_expert:
+			if( len(filter(lambda x: x.pos == item and ( x.valor >= 72 and x.valor <= 76 ), l_gems )) == 1 ):
+				debug("Expert chord not found here at {} - ( {} )".format( format_location( item ), item), True)
+		debug( "=================== ENDS MEDIUM BASS: No expert chords ===================", True )				
+		
+		#No chords allowed in easy
+		counter = Counter()
+		gems_in_chord = Counter()
+		debug( "", True )
+		debug( "=================== EASY BASS: No Chords ===================", True )
+		for notas_item in filter(lambda x: x.valor >= 60 and x.valor <= 64, l_gems):
+			debug_extra( "Found {} at {} - ( {}, {}): ".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ), notas_item.valor , notas_item.pos ), True ) 
+			counter_global[(notas_item.pos)] += 1
+			gems_in_chord[ ( notas_item.pos, notas_item.valor ) ] += 1
+		debug_extra("Validating chords....", True)
+		#Do we have more than one gem on top of kicks in this particular position?
+		for (a, b) in enumerate(counter_global):			
+			if( counter_global[b]>1 ):
+				gems_text = ''
+				for x, v in filter(lambda (x,y): x == b, gems_in_chord.keys() ):
+					gems_text = gems_text + num_to_text[ v ] + " + "
+				debug( "Found {} chord at {} - ( {} )".format( gems_text[:-3], format_location( b ), b ), True ) 	
+		counter_chord_easy = filter(lambda (x,y): y >= 2, counter_global.iteritems())
+		debug( "=================== ENDS EASY BASS: No Chords ===================", True )
+		
+		#No gems under solo marker
+		solo_start = []
+		solo_end = []
+		counter = Counter()
+		gems_in_solo = Counter()
+		debug( "", True )
+		debug( "=================== GENERAL BASS: No gems under solo marker ===================", True )
+		#Start notes
+		for notas_item in filter(lambda x: x.valor == 103 , l_gems):
+			solo_start.append( notas_item.pos )
+			debug_extra( "Found start {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 
+		#End notes
+		for notas_item in filter(lambda x: x.valor == 103 , r_gems):
+			solo_end.append( notas_item.pos )			
+			debug_extra( "Found end {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True )		
+		#Check for any gem under solo marker... we need at least one gem for the solo to be valid
+		#for midi_check in [60,61,62,63,64,72,73,74,75,76,84,85,86,87,88,96,97,98,99,100]:			
+		for index, item in enumerate(solo_start):
+			gems_text = '';
+			if ( filter(lambda x: x.valor >=60 and x.valor <=64 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Easy + '
+			if ( filter(lambda x: x.valor >=72 and x.valor <=76 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Medium + '
+			if ( filter(lambda x: x.valor >=84 and x.valor <=88 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Hard + '
+			if ( filter(lambda x: x.valor >=96 and x.valor <=100 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Expert + '
+			
+			debug( "INFO: Solo Marker #{} starts at {} ends at {} - [ {},{} ]".format( index+1, format_location( item ), format_location( solo_end[index] ), item, solo_end[index] ) ,True )
+			
+			if( counter[ item ] < 4 ):
+				debug( "ERROR: Gems are missing from at least one difficulty at Solo Marker #{}. Only found {} gems".format( index+1, gems_text[:-3] ) ,True )
+		debug( "=================== ENDS GENERAL BASS: No gems under solo marker ===================", True )
+		
+		debug( "", True )
+		debug( "=================== GENERAL: NO MATCHING GEMS ON EXPERT ===================", True )		
+		#Get all the gems in expert to compare whats missing in lower difficulties
+		all_g_expert = Counter()
+		all_r_expert = Counter()
+		all_y_expert = Counter()
+		all_b_expert = Counter()
+		all_o_expert = Counter()
+		for notas_item in filter(lambda x: x.valor == 96, l_gems):
+			all_g_expert[ notas_item.pos ] = 1
+		for notas_item in filter(lambda x: x.valor == 97, l_gems):
+			all_r_expert[ notas_item.pos ] = 1
+		for notas_item in filter(lambda x: x.valor == 98, l_gems):
+			all_y_expert[ notas_item.pos ] = 1
+		for notas_item in filter(lambda x: x.valor == 99, l_gems):
+			all_b_expert[ notas_item.pos ] = 1
+		for notas_item in filter(lambda x: x.valor == 100, l_gems):
+			all_o_expert[ notas_item.pos ] = 1		
+		midi_notes = [ [60, 72, 84], [61, 73, 85], [62, 74, 86], [63, 75, 87], [64, 76, 88]]	
+		#Green
+		for midi_note in midi_notes[0]:
+			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				if not ( all_g_expert[ notas_item.pos ] ):
+					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+		#Red
+		for midi_note in midi_notes[1]:
+			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				if not ( all_r_expert[ notas_item.pos ] ):
+					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+		#Yellow
+		for midi_note in midi_notes[2]:
+			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				if not ( all_y_expert[ notas_item.pos ] ):
+					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+		#Blue
+		for midi_note in midi_notes[3]:
+			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				if not ( all_b_expert[ notas_item.pos ] ):
+					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+		#Orange
+		for midi_note in midi_notes[4]:
+			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				if not ( all_o_expert[ notas_item.pos ] ):
+					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+		debug( "=================== ENDS GENERAL: NO MATCHING GEMS ON EXPERT ===================", True )
+		
+		#Some totals
+		debug( "", True )
+		debug( "=================== TOTAL BASS: Some numbers and stats ===================", True )
+		debug( "Three notes including G+O gems: {}".format( len( counter_positions ) ), True )
+		debug( "Expert Four notes chords: {}".format( len( counter_4_notes ) ), True )
+		debug( "Four notes chords: {}".format( len( counter_4_notes ) ), True )
+		debug( "Total Solo Markers: {}".format( len( solo_start ) ), True )
+		debug( "=================== ENDS TOTAL BASS: Some numbers and stats ===================", True )	
+		return bassTmpl
 
 def handle_vocals(content):
 		l_gems = []
