@@ -1,10 +1,16 @@
 # PYTHON REAPER SCRIPT FOR RBN ERROR CHECKING
-# Version 1.00
+# Version 2.05
 # Alex - 2012-10-30
 # rbn@mirockband.com
 # This script is inspired on Casto's RBN Script
 # This is a porting to Python as Perl support was removed after REAPER 4.13
 # Special thanks to neurogeek for helping with Python learning making all this possible!
+# What's new
+#--- Ported script to python to support REPAER 4.13+
+#--- Improved layout
+#--- More info messages
+#--- No gems under solo marker (Guitar / Bass)
+#--- Non existent gems on lower difficulties based on expert ( Drums)
 #
 #GUITAR/BASS
 #- Expert
@@ -21,7 +27,7 @@
 #- Easy
 #--- LEGACY: No chords
 #- General
-#--- LEGACY: If a color is used on expert, then it must be used on all difficulties (Pending)
+#--- LEGACY: If a color is used on expert, then it must be used on all difficulties
 #--- NEW: No gems under solo marker
 #
 #DRUMS
@@ -36,12 +42,12 @@
 #--- LEGACY: No Kicks with Gems
 #
 #VOCALS
-#--- LEGACY: Must be space between each note (Pending)
-#--- LEGACY: Illegal character check: comma, quotation marks (Pending)
-#--- LEGACY: Possible bad character warning: period (Pending)
-#--- LEGACY: First character of phrase capitalization check (Pending)
-#--- LEGACY: Check word after ! or ? is capitalized (Pending)
-#--- LEGACY: Check all mid-phrase capitalization (Pending)
+#--- LEGACY: Must be space between each note
+#--- LEGACY: Illegal character check: comma, quotation marks
+#--- LEGACY: Possible bad character warning: period
+#--- LEGACY: First character of phrase capitalization check
+#--- LEGACY: Check word after ! or ? is capitalized
+#--- LEGACY: Check all mid-phrase capitalization
 #
 #KEYS (5 Lane)
 #- Expert
@@ -73,6 +79,8 @@
 #
 import os
 import re
+import base64
+import string
 from collections import Counter
 
 # (start) Config section
@@ -81,6 +89,7 @@ from collections import Counter
 #cp.read(CONFIG_FILE)
 #OUTPUT_FILE = cp.get("GENERAL", "output_file")
 OUTPUT_FILE = 'C:\Users\Alexander\Desktop\myfile.txt'
+CONST_DEBUG_EXTRA = True
 #OUTPUT_FILE = os.path.abspath(os.path.dirname(__file__)) + "/myfile.txt"
 # (end) Config section
 
@@ -614,8 +623,9 @@ def handle_guitar(content):
 		debug( "=================== ENDS GENERAL GUITAR: No gems under solo marker ===================", True )
 		
 		debug( "", True )
-		debug( "=================== GENERAL: NO MATCHING GEMS ON EXPERT ===================", True )		
+		debug( "=================== GENERAL GUITAR: NO MATCHING GEMS ON EXPERT / ALL NODES BEING USED ===================", True )
 		#Get all the gems in expert to compare whats missing in lower difficulties
+		has_o, has_b, has_y, has_r, has_g = (False,False,False,False,False) 
 		all_g_expert = Counter()
 		all_r_expert = Counter()
 		all_y_expert = Counter()
@@ -623,41 +633,62 @@ def handle_guitar(content):
 		all_o_expert = Counter()
 		for notas_item in filter(lambda x: x.valor == 96, l_gems):
 			all_g_expert[ notas_item.pos ] = 1
+			has_g = True
 		for notas_item in filter(lambda x: x.valor == 97, l_gems):
 			all_r_expert[ notas_item.pos ] = 1
+			has_r = True
 		for notas_item in filter(lambda x: x.valor == 98, l_gems):
 			all_y_expert[ notas_item.pos ] = 1
+			has_y = True
 		for notas_item in filter(lambda x: x.valor == 99, l_gems):
 			all_b_expert[ notas_item.pos ] = 1
+			has_b = True
 		for notas_item in filter(lambda x: x.valor == 100, l_gems):
-			all_o_expert[ notas_item.pos ] = 1		
+			all_o_expert[ notas_item.pos ] = 1
+			has_o = True		
 		midi_notes = [ [60, 72, 84], [61, 73, 85], [62, 74, 86], [63, 75, 87], [64, 76, 88]]	
 		#Green
 		for midi_note in midi_notes[0]:
+			counter = 0		
 			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				counter += 1
 				if not ( all_g_expert[ notas_item.pos ] ):
 					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+			if( counter < 1 and has_g):
+				debug( "ERROR: No {} gems not found, must use all nodes used in expert".format( num_to_text[ midi_note ] ) , True )
 		#Red
 		for midi_note in midi_notes[1]:
+			counter = 0		
 			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
 				if not ( all_r_expert[ notas_item.pos ] ):
 					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+			if( counter < 1 and has_r):
+				debug( "ERROR: No {} gems not found, must use all nodes used in expert".format( num_to_text[ midi_note ] ) , True )
 		#Yellow
 		for midi_note in midi_notes[2]:
+			counter = 0		
 			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
 				if not ( all_y_expert[ notas_item.pos ] ):
 					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+			if( counter < 1 and has_y):
+				debug( "ERROR: No {} gems not found, must use all nodes used in expert".format( num_to_text[ midi_note ] ) , True )
 		#Blue
 		for midi_note in midi_notes[3]:
+			counter = 0		
 			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
 				if not ( all_b_expert[ notas_item.pos ] ):
 					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+			if( counter < 1 and has_b):
+				debug( "ERROR: No {} gems not found, must use all nodes used in expert".format( num_to_text[ midi_note ] ) , True )
 		#Orange
 		for midi_note in midi_notes[4]:
+			counter = 0		
 			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
 				if not ( all_o_expert[ notas_item.pos ] ):
 					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
-		debug( "=================== ENDS GENERAL: NO MATCHING GEMS ON EXPERT ===================", True )
+			if( counter < 1 and has_o):
+				debug( "ERROR: No {} gems not found, must use all nodes used in expert".format( num_to_text[ midi_note ] ) , True )
+		debug( "=================== ENDS GENERAL: NO MATCHING GEMS ON EXPERT / ALL NODES BEING USED ===================", True )
 		
 		#Some totals
 		debug( "", True )
@@ -922,8 +953,9 @@ def handle_bass(content):
 		debug( "=================== ENDS GENERAL BASS: No gems under solo marker ===================", True )
 		
 		debug( "", True )
-		debug( "=================== GENERAL: NO MATCHING GEMS ON EXPERT ===================", True )		
+		debug( "=================== GENERAL BASS: NO MATCHING GEMS ON EXPERT / ALL NODES BEING USED ===================", True )		
 		#Get all the gems in expert to compare whats missing in lower difficulties
+		has_o, has_b, has_y, has_r, has_g = (False,False,False,False,False)
 		all_g_expert = Counter()
 		all_r_expert = Counter()
 		all_y_expert = Counter()
@@ -931,41 +963,62 @@ def handle_bass(content):
 		all_o_expert = Counter()
 		for notas_item in filter(lambda x: x.valor == 96, l_gems):
 			all_g_expert[ notas_item.pos ] = 1
+			has_g = True
 		for notas_item in filter(lambda x: x.valor == 97, l_gems):
 			all_r_expert[ notas_item.pos ] = 1
+			has_r = True
 		for notas_item in filter(lambda x: x.valor == 98, l_gems):
 			all_y_expert[ notas_item.pos ] = 1
+			has_y = True
 		for notas_item in filter(lambda x: x.valor == 99, l_gems):
 			all_b_expert[ notas_item.pos ] = 1
+			has_b = True
 		for notas_item in filter(lambda x: x.valor == 100, l_gems):
-			all_o_expert[ notas_item.pos ] = 1		
-		midi_notes = [ [60, 72, 84], [61, 73, 85], [62, 74, 86], [63, 75, 87], [64, 76, 88]]	
+			all_o_expert[ notas_item.pos ] = 1
+			has_o = True		
+		midi_notes = [ [60, 72, 84], [61, 73, 85], [62, 74, 86], [63, 75, 87], [64, 76, 88]]		
 		#Green
 		for midi_note in midi_notes[0]:
+			counter = 0		
 			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
+				counter += 1
 				if not ( all_g_expert[ notas_item.pos ] ):
 					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+			if( counter < 1 and has_g):
+				debug( "ERROR: No {} gems not found, must use all nodes used in expert".format( num_to_text[ midi_note ] ) , True )
 		#Red
 		for midi_note in midi_notes[1]:
+			counter = 0		
 			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
 				if not ( all_r_expert[ notas_item.pos ] ):
 					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+			if( counter < 1 and has_r):
+				debug( "ERROR: No {} gems not found, must use all nodes used in expert".format( num_to_text[ midi_note ] ) , True )
 		#Yellow
 		for midi_note in midi_notes[2]:
+			counter = 0		
 			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
 				if not ( all_y_expert[ notas_item.pos ] ):
 					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+			if( counter < 1 and has_y):
+				debug( "ERROR: No {} gems not found, must use all nodes used in expert".format( num_to_text[ midi_note ] ) , True )
 		#Blue
 		for midi_note in midi_notes[3]:
+			counter = 0		
 			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
 				if not ( all_b_expert[ notas_item.pos ] ):
 					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
+			if( counter < 1 and has_b):
+				debug( "ERROR: No {} gems not found, must use all nodes used in expert".format( num_to_text[ midi_note ] ) , True )
 		#Orange
 		for midi_note in midi_notes[4]:
+			counter = 0		
 			for notas_item in filter(lambda x: x.valor == midi_note, l_gems):
 				if not ( all_o_expert[ notas_item.pos ] ):
 					debug( "{} not found on Expert at {}".format( num_to_text[ midi_note ], format_location( notas_item.pos ) ) , True )
-		debug( "=================== ENDS GENERAL: NO MATCHING GEMS ON EXPERT ===================", True )
+			if( counter < 1 and has_o):
+				debug( "ERROR: No {} gems not found, must use all nodes used in expert".format( num_to_text[ midi_note ] ) , True )
+		debug( "=================== ENDS GENERAL BASS: NO MATCHING GEMS ON EXPERT / ALL NODES BEING USED ===================", True )
 		
 		#Some totals
 		debug( "", True )
@@ -979,8 +1032,208 @@ def handle_bass(content):
 
 def handle_vocals(content):
 		l_gems = []
-		guitarTmpl = {}
-		return guitarTmpl
+		r_gems = []
+		p_gems = []
+		vocalsTmpl = {}
+		has_vocals = True
+		num_to_text = {
+			116: "Overdrive",
+			105: "Phrase Marker",
+			97:	"Non-Displayed Percussion",
+			96:	"Displayed Percussion",
+			83:	"Highest Note B5",
+			82:	"A#4",
+			81:	"A4",
+			80:	"G#4",
+			79:	"G4",
+			78:	"F#4",
+			77:	"F4",
+			76:	"E4",
+			75:	"D#4",
+			74:	"D4",
+			73:	"C#4",
+			72:	"C4",
+			71:	"B3",
+			70:	"A#3",
+			69:	"A3",
+			68:	"G#3",
+			67:	"G3",
+			66:	"F#3",
+			65:	"F3",
+			64:	"E3",
+			63:	"D#3",
+			62:	"D3",
+			61:	"C#3",
+			60:	"C3",
+			59:	"B2",
+			58:	"A#2",
+			57:	"A2",
+			56:	"G#2",
+			55:	"G2",
+			54:	"F#2",
+			53:	"F2",
+			52:	"E2",
+			51:	"D#2",
+			50:	"D2",
+			49:	"C#2",
+			48:	"C2",
+			47:	"B1",
+			46:	"A#1",
+			45:	"A1",
+			44:	"G#1",
+			43:	"G1",
+			42:	"F#1",
+			41:	"F1",
+			40:	"E1",
+			39:	"D#1",
+			38:	"D1",
+			37:	"C#1",
+			36:	"Lowest Note C1",
+			1:	"Lyric Shift",
+			0:	"Range Shift"
+		}
+		#debug (content, True)
+		#
+		#all_e_notes = re.findall("^([E,e]\s[a-f,0-9]+\s[a-f,0-9]+\s[a-f,0-9]+\s[a-f,0-9]+)$", content, re.MULTILINE)
+		#all_x_notes = re.findall("^<(X\s[a-f,0-9]+\s[a-f,0-9]+)$", content, re.I | re.MULTILINE)
+		all_f_notes = content.split('\n')
+		all_notes = []
+		for elem in all_f_notes:		
+			if( re.match("^([E,e]\s[a-f,0-9]+\s[a-f,0-9]+\s[a-f,0-9]+\s[a-f,0-9]+)$", elem) or re.match("^<(X\s[a-f,0-9]+\s[a-f,0-9]+)$", elem) ):
+				all_notes.append( elem )
+		all_l_notes = re.findall("^\/(.*)$", content, re.I | re.MULTILINE)
+		noteloc = 0;
+		decval="";
+		c = []
+		for elem in all_notes:
+			decval = 0;
+			midi_parts = elem.split()
+			
+			if( midi_parts[0].lower() == 'e' ):
+				decval = int( midi_parts[3], 16 )
+			
+			noteloc = int( noteloc ) + int( midi_parts[1] );		
+
+			#Just parse or debug those notes that are really in the chart
+			#we can exclude notes off, text events, etc.
+			if( midi_parts[0].lower() == 'e' and re.search("^9", midi_parts[2] ) ):
+				l_gems.append( Nota(decval, noteloc) )
+				debug_extra("Starts with 9: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
+				debug( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
+			elif( midi_parts[0].lower() == 'e' and re.search("^8", midi_parts[2] ) ):			
+				r_gems.append( Nota(decval, noteloc) )
+				c.append(noteloc)
+				debug_extra("Starts with 8: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
+				debug( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
+			else:
+				p_gems.append( Nota(decval, noteloc) )
+				debug_extra("Text Event: Midi # {}, MBT {}, Type {}, Extra {} ".format( str( decval ), str( noteloc ),str( midi_parts[1] ),str( midi_parts[2] ) ) )
+				debug( "Text Event found at {}".format( format_location( noteloc ) ), True )
+				
+		lyric_positions = Counter()
+		for index, item in enumerate(all_l_notes):
+			debug_extra("Index {}: Encoded: {} || Decoded: {} at {} ( {} )".format(index, item, base64.b64decode( '/' + item )[2:],format_location( p_gems[index].pos ), p_gems[index].pos ), True)
+			lyric_positions[ p_gems[index].pos ] = base64.b64decode( '/' + item )[2:]
+		#Get all Phrase Markers
+		debug( "", True )
+		debug( "=================== VOCALS: Phrase Markers and lyrics ===================", True )
+		phrase_start = []
+		phrase_end = []
+		#Start notes
+		for notas_item in filter(lambda x: x.valor == 105 , l_gems):
+			phrase_start.append( notas_item.pos )
+			debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 
+		#End notes
+		for notas_item in filter(lambda x: x.valor == 105 , r_gems):
+			phrase_end.append( notas_item.pos )			
+			debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 		
+		#
+		reserved_words = ['[play]','[mellow]','[intense]','[idle]']
+		punctuation = ['?','!']
+		warning_characters = ['.']
+		warning_characters_error = ['period/dot']
+		special_characters = [',','’','â€™','"']
+		special_characters_error = ['comma','smart apostrophe','smart apostrophe','quotes']
+		special_characters_error = ['comma','smart apostrophe','smart apostrophe','quotes']
+		remove_words = string.maketrans("#^","  ")
+		check_caps = False
+		last_note = 0
+		#For each phrase marker we find the lyrics
+		for index, item in enumerate(phrase_start):
+			full_phrase = ''
+			debug_extra( "Phrase Marker #{} starts at {} ends at {} - [ {},{} ]".format( index+1, format_location( item ), format_location( phrase_end[index] ), item, phrase_end[index] ) ,True )
+			for od_midi_note in filter(lambda x: x.pos >= item and x.pos <= phrase_end[index] , p_gems):			
+				
+				if lyric_positions[ od_midi_note.pos ] not in reserved_words:
+					if( last_note == od_midi_note.pos ):
+						debug("HEre {} {}".format(last_note, item), True)					
+					
+					debug_extra("Syllable {} found at {}".format(lyric_positions[ od_midi_note.pos ], od_midi_note.pos), True)
+					debug_extra("Last characeter is {}".format(lyric_positions[ od_midi_note.pos ][-1:] ), True)
+					if lyric_positions[ od_midi_note.pos ] != '+':
+						syllable = lyric_positions[ od_midi_note.pos ] + ' '
+						if( lyric_positions[ od_midi_note.pos ][-1:] == '-' ):
+							syllable = lyric_positions[ od_midi_note.pos ][:-1] + ''
+						if( lyric_positions[ od_midi_note.pos ][-1:] == '=' ):
+							syllable = lyric_positions[ od_midi_note.pos ][:-1] + '- '
+						
+						#Check syllable for special characters
+						for index_char, special_char in enumerate(special_characters):
+							if( syllable.find( special_char )!=-1 ):
+								debug("ERROR: Found {} in syllable {} at {}".format( special_characters_error[ index_char ], syllable.strip(), format_location( od_midi_note.pos ) ), True)
+						
+						#Check syllable for warning characaters
+						for index_char, special_char in enumerate(warning_characters):
+							if( syllable.find( special_char )!=-1 ):
+								debug("WARNING: Found {} in syllable {} at {}".format( warning_characters_error[ index_char ], syllable.strip(), format_location( od_midi_note.pos ) ), True)
+						
+						#Is the syllable upper case? This is not valid!	
+						if( full_phrase != '' and syllable[0].isupper() ):
+							debug("ERROR: syllable \"{}\" should not be uppercase at {} - [{}, {}]".format(syllable.translate( remove_words ).strip(),  format_location( od_midi_note.pos ),  item,  od_midi_note.pos ), True)						
+						elif( ( full_phrase == '' or check_caps == True ) and not syllable[0].isupper() ):
+							check_caps = False
+							debug("ERROR: syllable \"{}\" should be uppercase at {} - [{}, {}]".format(syllable.translate( remove_words ).strip(),  format_location( od_midi_note.pos ),  item,  od_midi_note.pos ), True)							
+						full_phrase += syllable + ''
+					
+					if lyric_positions[ od_midi_note.pos ][-1:] in punctuation:
+						debug("INFO: Word after \"{}\" needs to be checked for uppercase letter".format( syllable.strip() ), True)
+						check_caps = True
+					last_note = item
+			#Print full phrase
+			debug("INFO: Phrase #{} from {} to {}: {}".format(index+1, format_location( item ),format_location( phrase_end[index] ), re.sub(r'\s+', ' ', full_phrase.translate( remove_words )) ), True)
+		
+		debug( "=================== ENDS VOCALS: Phrase markers and lyrics ===================", True )
+		
+		#Get all ODs
+		debug( "", True )
+		debug( "=================== VOCALS: ODs ===================", True )
+		od_start = []
+		od_end = []
+		#Start notes
+		for notas_item in filter(lambda x: x.valor == 116 , l_gems):
+			od_start.append( notas_item.pos )
+			debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 
+		#End notes
+		for notas_item in filter(lambda x: x.valor == 116 , r_gems):
+			od_end.append( notas_item.pos )			
+			debug_extra( "Found {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 
+		#For od marker we do ....
+		for index, item in enumerate(od_start):
+			#Print
+			debug("INFO: Overdrive #{} from {} to {}".format(index+1, format_location( item ),format_location( od_end[index] ) ), True)
+		debug( "=================== ENDS VOCALS: ODs ===================", True )
+		
+		#Get notes without space
+		debug( "", True )
+		debug( "=================== VOCALS: Notes without space ===================", True )
+		#Start notes
+		for notas_item in l_gems:
+			for notas_item_2 in filter(lambda x: x.pos == notas_item.pos , r_gems):
+				debug("ERROR: Note {} starting at {} needs at least 2 64ths note gap between notes".format( num_to_text[ notas_item_2.valor ], format_location( notas_item_2.pos ) ), True)
+			
+		debug( "=================== ENDS VOCALS: Notes without space ===================", True )
+		
+		return vocalsTmpl
 
 def handle_harm1(content):
 		l_gems = []
@@ -1048,10 +1301,12 @@ def debug( output_content, add_new_line=False ):
 		f.write( output_content )
 
 def debug_extra( output_content, add_new_line=False ):
-	if add_new_line: 
-		f.write( "debug_extra :: " + output_content + '\n')
-	else:
-		f.write( "debug_extra :: " + output_content )
+	global CONST_DEBUG_EXTRA
+	if( CONST_DEBUG_EXTRA ):
+		if add_new_line: 
+			f.write( "DEBUG: " + output_content + '\n')
+		else:
+			f.write( "DEBUG: " + output_content )
 		
 	
 #Map functions to handlers
