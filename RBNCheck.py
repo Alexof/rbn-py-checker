@@ -89,6 +89,7 @@ from collections import Counter
 OUTPUT_FILE = 'C:\\rbn-py-checker\\myfile.txt'
 OUTPUT_HTML_FILE = 'C:\\rbn-py-checker\\RBN_Output.html'
 CONST_DEBUG_EXTRA = False
+CONST_DEBUG = False
 global_harm2_phase_start = []
 global_harm2_phase_end = []
 #OUTPUT_FILE = os.path.abspath(os.path.dirname(__file__)) + "/myfile.txt"
@@ -251,7 +252,7 @@ def handle_drums( content, part_name ):
 				has_error = True
 		#debug(str(tempo), True)
 		debug( "=================== ENDS MEDIUM DRUMS: Error Kick + 2 Gems ===================", True )
-		
+		'''
 		debug( "", True )
 		debug( "=================== MISSING GEMS LOWER DIFFICULTIES ===================", True )		
 		#Get all the gems in expert to compare whats missing in lower difficulties
@@ -309,8 +310,8 @@ def handle_drums( content, part_name ):
 					drumTmpl['drums_not_found_lower'] += '<div class="row-fluid"><span class="span12"><strong>{}</strong> {} not found on Expert</span></div>'.format( format_location( notas_item.pos ),num_to_text[ midi_note ] )
 					has_error = True
 		debug( "=================== ENDS MISSING GEMS LOWER DIFFICULTIES===================", True )
-		
-		
+		'''
+		'''
 		debug( "", True )
 		debug( "=================== ANIMATION BUT NO PRO MARKER ===================", True )
 		all_tom_anim = Counter()
@@ -324,7 +325,7 @@ def handle_drums( content, part_name ):
 				drumTmpl['drums_tom_marker'] += '<div class="row-fluid"><span class="span12"><strong>{}</strong> Tom Marker not found for Drum Animation</span></div>'.format( format_location( midi_note_pos ) )
 				has_error = True
 		debug( "=================== ENDS ANIMATION BUT NO PRO MARKER ===================", True )
-		
+		'''
 		#Get all Drums fills
 		#We only get orange marker drum fill assuming all five are set
 		debug( "", True )
@@ -494,12 +495,12 @@ def handle_guitar(content, part_name ):
 			#we can exclude notes off, text events, etc.
 			if( midi_parts[0].lower() == 'e' and re.search("^9", midi_parts[2] ) ):
 				l_gems.append( Nota(decval, noteloc) )
-				debug("Starts with 9: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
-				debug( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
+				#debug("Starts with 9: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
+				#debug( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
 			elif( midi_parts[0].lower() == 'e' and re.search("^8", midi_parts[2] ) ):			
 				r_gems.append( Nota(decval, noteloc) )
-				debug("Starts with 8: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
-				debug( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
+				#debug("Starts with 8: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
+				#debug( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
 			else:
 				#debug("Text Event: Midi # {}, MBT {}, Type {}, Extra {} ".format( str( decval ), str( noteloc ),str( midi_parts[1] ),str( midi_parts[2] ) ) )
 				#debug( "{} at {}".format( "None", format_location( noteloc ) ), True )
@@ -713,6 +714,7 @@ def handle_guitar(content, part_name ):
 		debug( "", True )
 		debug( "=================== GENERAL " + part_name + ": NO MATCHING GEMS ON EXPERT / ALL NODES BEING USED ===================", True )
 		#Get all the gems in expert to compare whats missing in lower difficulties
+		'''
 		has_o, has_b, has_y, has_r, has_g = (False,False,False,False,False) 
 		all_g_expert = Counter()
 		all_r_expert = Counter()
@@ -803,7 +805,7 @@ def handle_guitar(content, part_name ):
 				guitarTmpl[ output_part_var + "_general_issues"] += '<div class="row-fluid"><span class="span12"><strong class="">0.0</strong> <span>{} gems not found, must use all nodes used in expert</span> </span></div>'.format( num_to_text[ midi_note ] )
 				has_error = True
 		debug( "=================== ENDS GENERAL " + part_name + ": NO MATCHING GEMS ON EXPERT / ALL NODES BEING USED ===================", True )
-		
+		'''
 		#Some totals
 		total_ods = len( filter(lambda x: x.valor == 116, l_gems) )
 		debug( "", True )
@@ -1222,7 +1224,7 @@ def handle_keys(content, part_name ):
 				localTmpl[ "keys_general_issues"] += '<div class="row-fluid"><span class="span12"><strong class="">{}</strong> <span>Gems are missing from at least one difficulty at Solo Marker #{}. Only found {} gems</span> </span></div>'.format( format_location( item ), index+1, gems_text[:-3] )
 				has_error = True
 		debug( "=================== ENDS GENERAL KEYS: No gems under solo marker ===================", True )
-		
+		'''
 		debug( "", True )
 		debug( "=================== GENERAL KEYS: NO MATCHING GEMS ON EXPERT / ALL NODES BEING USED ===================", True )
 		#Get all the gems in expert to compare whats missing in lower difficulties
@@ -1316,7 +1318,7 @@ def handle_keys(content, part_name ):
 				localTmpl[ "keys_general_issues" ] += '<div class="row-fluid"><span class="span12"><strong class="">0.0</strong> <span>{} gems not found, must use all nodes used in expert</span> </span></div>'.format( num_to_text[ midi_note ] )
 				has_error = True
 		debug( "=================== ENDS GENERAL KEYS: NO MATCHING GEMS ON EXPERT / ALL NODES BEING USED ===================", True )
-		
+		'''
 		#Some totals
 		total_ods = len( filter(lambda x: x.valor == 116, l_gems) )
 		debug( "", True )
@@ -1383,10 +1385,12 @@ def console_msg(*msg):
   RPR_ShowConsoleMsg(str(msg) + '\n' + '\n')
 
 def debug( output_content, add_new_line=False ):
-	if add_new_line: 
-		f.write( output_content + '\n')
-	else:
-		f.write( output_content )
+	global CONST_DEBUG
+	if( CONST_DEBUG_EXTRA ):
+		if add_new_line: 
+			f.write( output_content + '\n')
+		else:
+			f.write( output_content )
 
 def debug_extra( output_content, add_new_line=False ):
 	global CONST_DEBUG_EXTRA
@@ -1395,8 +1399,9 @@ def debug_extra( output_content, add_new_line=False ):
 			f.write( "DEBUG: " + output_content + '\n')
 		else:
 			f.write( "DEBUG: " + output_content )
-		
-	
+
+def debug_html( output_content, add_new_line=False ):		
+	f.write( output_content )
 #Map functions to handlers
 switch_map = {"PART DRUMS" : handle_drums,
               "PART GUITAR" : handle_guitar,
@@ -1662,9 +1667,9 @@ with open(OUTPUT_HTML_FILE, 'w') as f:
 								<div>
 									<h3 class="alert alert-error">General Errors / Warnings</h3>
 									<div>''' + "{}".format( dTmpl['guitar_general_issues'] ) + '''</div>
-								</div>
+								</div>'''
 							
-							</div>
+	var_html += '''</div>
 						
 						</div>
 						<div class="tab-pane" id="tab_prokeys">
@@ -1818,5 +1823,5 @@ with open(OUTPUT_HTML_FILE, 'w') as f:
   </body>
 </html>
 '''
-	debug(str(var_html))
+	debug_html(str(var_html))
 webbrowser.open( OUTPUT_HTML_FILE )
