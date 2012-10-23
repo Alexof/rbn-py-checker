@@ -1,0 +1,5055 @@
+<REAPER_PROJECT 0.1 "4.261"
+  RIPPLE 0
+  GROUPOVERRIDE 0 0 0
+  AUTOXFADE 1
+  ENVATTACH 1
+  MIXERUIFLAGS 11 48
+  PEAKGAIN 1.00000000000000
+  FEEDBACK 0
+  PANLAW 1.00000000000000
+  PROJOFFS 0.00000000000000 0
+  MAXPROJLEN 0 600.00000000000000
+  GRID 3199 8 1.00000000000000 8 1.00000000000000 0
+  TIMEMODE 1 0 -1
+  PANMODE 3
+  CURSOR 10.00000000000000
+  ZOOM 83.55809850989517 546 0
+  VZOOMEX 6
+  USE_REC_CFG 0
+  RECMODE 1
+  SMPTESYNC 0 23.976024 100 40 1000 300 0 0.000000 1
+  LOOP 0
+  LOOPGRAN 0 4.00000000000000
+  RECORD_PATH "" ""
+  <RECORD_CFG
+  >
+  <APPLYFX_CFG
+  >
+  RENDER_FILE ""
+  RENDER_PATTERN ""
+  RENDER_FMT 0 2 0
+  RENDER_1X 0
+  RENDER_RANGE 1 0.00000000000000 0.00000000000000
+  RENDER_RESAMPLE 3 0 1
+  RENDER_ADDTOPROJ 0
+  RENDER_STEMS 0
+  RENDER_DITHER 0
+  TIMELOCKMODE 1
+  TEMPOENVLOCKMODE 1
+  ITEMMIX 0
+  DEFPITCHMODE 393216
+  TAKELANE 1
+  SAMPLERATE 44100 0 0
+  <RENDER_CFG
+  >
+  LOCK 1
+  <METRONOME 6 2.000000
+    VOL 0.250000 0.125000
+    FREQ 800 1600 1
+    BEATLEN 4
+    SAMPLES "" ""
+  >
+  GLOBAL_AUTO -1
+  TEMPO 120.00000000000000 4 4
+  PLAYRATE 1.00000000000000 0 0.25000 4.00000
+  SELECTION 0.00000000000000 0.00000000000000
+  SELECTION2 0.00000000000000 0.00000000000000
+  MASTERAUTOMODE 0
+  MASTERTRACKHEIGHT 0
+  MASTERPEAKCOL 16576
+  MASTERMUTESOLO 0
+  MASTERTRACKVIEW 0 0.666700 0.500000 0.500000 -1 -1 -1
+  MASTERHWOUT 0 0 1.00000000000000 0.00000000000000 0 0 0 -1.00000000000000
+  MASTER_NCH 2 2
+  MASTER_VOLUME 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+  MASTER_PANMODE -1
+  MASTER_FX 1
+  MASTER_SEL 0
+  <MASTERPLAYSPEEDENV
+    ACT 0
+    VIS 0 1 1.000000
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 0 -1 -1
+  >
+  <TEMPOENVEX
+    ACT 0
+    VIS 1 0 1.000000
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 1 -1 -1
+  >
+  <PROJBAY
+  >
+  <TRACK '{8F33A645-3DF2-48FA-99BC-10992A4F8042}'
+    NAME "PART DRUMS"
+    PEAKCOL 16842751
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 1 1
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 4096 1 7 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {8F33A645-3DF2-48FA-99BC-10992A4F8042}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 84 "HARD Kick"
+      0 96 "EXPERT Kick"
+      0 72 "MEDIUM Kick"
+      0 60 "EASY Kick"
+      0 97 "EXPERT Red"
+      0 98 "EXPERT Yellow"
+      0 99 "EXPERT Blue"
+      0 100 "EXPERT Green"
+      0 85 "HARD Red"
+      0 86 "HARD Yellow"
+      0 87 "HARD Blue"
+      0 88 "HARD Green"
+      0 73 "MEDIUM Red"
+      0 74 "MEDIUM Yellow"
+      0 75 "MEDIUM Blue"
+      0 76 "MEDIUM Green"
+      0 61 "EASY Red"
+      0 62 "EASY Yellow"
+      0 63 "EASY Blue"
+      0 64 "EASY Green"
+      0 101 " "
+      0 92 "----"
+      0 80 "----"
+      0 68 "----"
+      0 120 "DRUM FILL (use all 5)"
+      0 121 "DRUM FILL"
+      0 122 "DRUM FILL"
+      0 123 "DRUM FILL"
+      0 124 "DRUM FILL"
+      0 114 "----"
+      0 116 "OVERDRIVE"
+      0 118 "----"
+      0 24 "KICK RF"
+      0 25 "HI-HAT OPEN"
+      0 26 "SNARE LH"
+      0 27 "SNARE RH"
+      0 30 "HI-HAT LH"
+      0 31 "HI-HAT RH"
+      0 32 "PERCUSSION RH"
+      0 34 "CRASH1 HARD LH"
+      0 35 "CRASH1 SOFT LH"
+      0 36 "CRASH1 HARD RH"
+      0 37 "CRASH1 SOFT RH"
+      0 38 "CRASH2 HARD RH"
+      0 39 "CRASH2 SOFT RH"
+      0 40 "CRASH1 CHOKE"
+      0 41 "CRASH2 CHOKE"
+      0 42 "RIDE CYM RH"
+      0 46 "TOM1 LH"
+      0 47 "TOM1 RH"
+      0 48 "TOM2 LH"
+      0 49 "TOM2 RH"
+      0 50 "FLOOR TOM LH"
+      0 51 "FLOOR TOM RH"
+      0 52 "-- DRUM ANIMATION --"
+      0 56 "----"
+      0 103 "Solo Marker"
+      0 102 "----"
+      0 110 "TOM GEMS PAD 2"
+      0 111 "TOM GEMS PAD 3"
+      0 112 "TOM GEMS PAD 4"
+      0 28 "SOFT SNARE LH"
+      0 29 "SOFT SNARE RH"
+      0 43 "RIDE LH"
+      0 44 "CRASH 2 LH"
+      0 45 "SOFT CRASH 2 LH"
+      0 126 "DRUM ROLL"
+      0 125 "---"
+      0 127 "CYMBAL SWELLS"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 417 11 870 585
+      SHOW 0
+      LASTSEL 1
+      DOCKED 0
+      BYPASS 1 0
+      <VST "VSTi: ReaSynth (Cockos)" "reasynth.dll" 0 ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAA4AAAAAAAAAA==
+        AAAAAO++rd4N8K3eAAAAAAAAAAAAAAAAAAAAADm0SD59y9s+tbSxOQ==
+        AAAAALbz/T5VpCs6AAAAAAAAAAAAAAAAAAA=
+      >
+      FLOATPOS 0 0 0 0
+      FXID {58F55556-9407-4062-A048-6AFCC0B53535}
+      WAK 0
+      BYPASS 0 0
+      <VST "VSTi: RBN Preview (RBN)" "rbprev_vst.dll" 0 ""
+        dnBicu5e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAAEAAAAAQAAAA==
+        AAAAAAMBqgAAAAAAAAA=
+      >
+      FLOATPOS 32 32 659 497
+      FXID {D7126437-AB1E-4109-A0FA-F2D5D0AC68DC}
+      WAK 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      COLOR 19150555
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {9FF11F36-E94F-4396-9C0E-8449C916EC21}
+      IID 17
+      NAME "PART DRUMS"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {70A79ADF-E70C-430A-913F-E16D0CC85517}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {B106249F-B529-4BD1-B888-2FF0B0EBB5CD}
+        <X 0 0
+          /wNQQVJUIERSVU1T
+        >
+        <X 60 0
+          /wFbbWl4IDAgZHJ1bXMzXQ==
+        >
+        <X 60 0
+          /wFbbWl4IDEgZHJ1bXMzXQ==
+        >
+        <X 60 0
+          /wFbbWl4IDIgZHJ1bXMzXQ==
+        >
+        <X 60 0
+          /wFbbWl4IDMgZHJ1bXMzXQ==
+        >
+        <X 3600 0
+          /wFbcGxheV0=
+        >
+        E 0 90 3c 64
+        E 0 90 48 64
+        E 0 90 54 64
+        E 0 90 60 60
+        E 120 80 3c 00
+        E 0 80 48 00
+        E 0 80 54 00
+        E 0 80 60 00
+        E 360 90 54 64
+        E 0 90 60 64
+        E 120 80 54 00
+        E 0 80 60 00
+        E 360 90 3c 64
+        E 0 90 40 64
+        E 0 90 48 64
+        E 0 90 54 64
+        E 0 90 60 64
+        E 120 80 3c 00
+        E 0 80 40 00
+        E 0 80 48 00
+        E 0 80 54 00
+        E 0 80 60 00
+        E 360 90 54 64
+        E 0 90 60 64
+        E 120 80 54 00
+        E 0 80 60 00
+        E 360 90 3c 64
+        E 0 90 3f 64
+        E 0 90 48 64
+        E 0 90 49 64
+        E 0 90 4c 64
+        E 0 90 54 64
+        E 0 90 60 64
+        E 120 80 3c 00
+        E 0 80 3f 00
+        E 0 80 48 00
+        E 0 80 49 00
+        E 0 80 4c 00
+        E 0 80 54 00
+        E 0 80 60 00
+        E 360 90 3c 64
+        E 0 90 54 64
+        E 120 80 3c 00
+        E 0 80 54 00
+        E 360 90 48 64
+        E 0 90 49 64
+        E 0 90 4a 64
+        E 120 80 48 00
+        E 0 80 49 00
+        E 0 80 4a 00
+        E 840 90 33 60
+        E 0 90 64 60
+        E 120 80 33 00
+        E 0 80 64 00
+        E 360 90 30 60
+        E 120 80 30 00
+        E 1320 90 78 60
+        E 0 90 79 60
+        E 0 90 7a 60
+        E 0 90 7b 60
+        E 0 90 7c 60
+        E 1920 80 78 00
+        E 0 80 79 00
+        E 0 80 7a 00
+        E 0 80 7b 00
+        E 0 80 7c 00
+        E 1920 90 74 60
+        E 1920 80 74 00
+        E 1920 90 78 60
+        E 0 90 79 60
+        E 0 90 7a 60
+        E 0 90 7b 60
+        E 0 90 7c 60
+        E 1920 80 78 00
+        E 0 80 79 00
+        E 0 80 7a 00
+        E 0 80 7b 00
+        E 0 80 7c 00
+        E 1920 90 74 60
+        E 1920 80 74 00
+        E 1920 90 78 60
+        E 0 90 79 60
+        E 0 90 7a 60
+        E 0 90 7b 60
+        E 0 90 7c 60
+        E 1920 80 78 00
+        E 0 80 79 00
+        E 0 80 7a 00
+        E 0 80 7b 00
+        E 0 80 7c 00
+        E 0 90 74 64
+        E 1920 80 74 00
+        E 1920 90 74 64
+        E 1920 80 74 00
+        E 0 90 78 60
+        E 0 90 79 60
+        E 0 90 7a 60
+        E 0 90 7b 60
+        E 0 90 7c 60
+        E 1920 80 78 00
+        E 0 80 79 00
+        E 0 80 7a 00
+        E 0 80 7b 00
+        E 0 80 7c 00
+        E 5280 90 74 64
+        E 480 90 78 60
+        E 0 90 79 60
+        E 0 90 7a 60
+        E 0 90 7b 60
+        E 0 90 7c 60
+        E 1440 80 74 00
+        E 480 80 78 00
+        E 0 80 79 00
+        E 0 80 7a 00
+        E 0 80 7b 00
+        E 0 80 7c 00
+        E 5760 90 78 60
+        E 0 90 79 60
+        E 0 90 7a 60
+        E 0 90 7b 60
+        E 0 90 7c 60
+        E 0 90 7e 64
+        E 1920 80 78 00
+        E 0 80 79 00
+        E 0 80 7a 00
+        E 0 80 7b 00
+        E 0 80 7c 00
+        E 0 80 7e 00
+        E 129600 b0 7b 00
+        GUID {99C52F88-C54B-4CCD-B038-A5C950AC8E6E}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 16
+        VELLANE 132 83 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_drums.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "C:\Program Files (x86)\REAPER\Data\Text_Strings\Text Events - Instruments - Drums.txt"
+        CFGEDITVIEW 2022.066119 83.558099 0 12 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.25000000 -17 7 1365 791 1 2 1 2 0.00000000 0 0 1 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{3AF7DFB3-A5D4-405C-9D06-D6E1FF715860}'
+    NAME "KICK"
+    PEAKCOL 16842751
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {3AF7DFB3-A5D4-405C-9D06-D6E1FF715860}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+  >
+  <TRACK '{81926A91-9090-448A-A326-B40AD4C1362A}'
+    NAME "SNR"
+    PEAKCOL 16842751
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {81926A91-9090-448A-A326-B40AD4C1362A}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+  >
+  <TRACK '{CFFB164E-B1F7-4947-959F-2FF8182ACB32}'
+    NAME "CYM"
+    PEAKCOL 16842751
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 2 -1
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {CFFB164E-B1F7-4947-959F-2FF8182ACB32}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+  >
+  <TRACK '{70C3FE4D-3BC3-4146-95C4-8AC455A2D0F5}'
+    NAME "PART BASS"
+    PEAKCOL 16777471
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 1 1
+    BUSCOMP 1 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 4096 1 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {70C3FE4D-3BC3-4146-95C4-8AC455A2D0F5}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 96 "EXPERT Green"
+      0 97 "EXPERT Red"
+      0 98 "EXPERT Yellow"
+      0 99 "EXPERT Blue"
+      0 100 "EXPERT Orange"
+      0 84 "HARD Green"
+      0 85 "HARD Red"
+      0 86 "HARD Yellow"
+      0 87 "HARD Blue"
+      0 88 "HARD Orange"
+      0 91 "----"
+      0 116 "OVERDRIVE"
+      0 40 "Left Hand Lowest"
+      0 59 "Left Hand Highest"
+      0 58 "-"
+      0 57 "-"
+      0 56 "-"
+      0 55 "-"
+      0 54 "-"
+      0 53 "-"
+      0 52 "-"
+      0 51 "-"
+      0 50 "-"
+      0 49 "-"
+      0 47 "-"
+      0 48 "-"
+      0 46 "-"
+      0 45 "-"
+      0 44 "-"
+      0 43 "-"
+      0 42 "-"
+      0 41 "-"
+      0 111 "----"
+      0 72 "MEDIUM Green"
+      0 73 "MEDIUM Red"
+      0 74 "MEDIUM Yellow"
+      0 75 "MEDIUM Blue"
+      0 76 "MEDIUM Orange"
+      0 60 "EASY Green"
+      0 61 "EASY Red"
+      0 62 "EASY Yellow"
+      0 63 "EASY Blue"
+      0 64 "EASY Orange"
+      0 68 "----"
+      0 80 "----"
+      0 102 "Force HOPO Off"
+      0 101 "Force HOPO On"
+      0 120 "BRE (use all 5)"
+      0 121 "BRE"
+      0 122 "BRE"
+      0 123 "BRE"
+      0 124 "BRE"
+      0 119 "----"
+      0 90 "Force HOPO Off"
+      0 89 "Force HOPO On"
+      0 103 "Solo Marker"
+      0 127 "TRILL MARKER"
+      0 126 "TREMOLO MARKER"
+      0 125 "---"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 0 38 647 480
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 1 0
+      <VST "VSTi: ReaSynth (Cockos)" "reasynth.dll" 0 ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAA4AAAAAAAAAA==
+        AAAAAO++rd4N8K3eAAAAAAAAAAAAAAAAAAAAADm0SD59y9s+tbSxOQ==
+        AAAAALbz/T5VpCs6AAAAAAAAAAAAAAAAAAA=
+      >
+      FLOATPOS 0 0 0 0
+      FXID {D4EC3C58-478E-4D1F-A0FC-2252BD344989}
+      WAK 0
+      BYPASS 0 0
+      <VST "VSTi: RBN Preview (RBN)" "rbprev_vst.dll" 0 ""
+        dnBicu5e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAAEAAAAAQAAAA==
+        AAAAAAMAqgAAAAAAAAA=
+      >
+      FLOATPOS 32 32 659 497
+      FXID {72D22271-4F4F-4081-90C4-66415E7AEC47}
+      WAK 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {A1B24BBF-93B7-476C-BC6D-33F5621C633F}
+      IID 18
+      NAME "PART BASS"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {344A7487-35C3-41F9-8B1E-12A4F3D7F336}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {420E7ADD-2233-4E43-95B4-3509BB55533B}
+        <X 0 0
+          /wNQQVJUIEJBU1M=
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        e 0 90 55 60
+        e 0 90 56 60
+        e 0 90 57 60
+        e 0 90 62 60
+        e 0 90 64 60
+        e 0 91 3c 64
+        e 0 91 48 64
+        e 0 91 54 64
+        e 0 91 60 64
+        e 120 80 55 00
+        e 0 80 56 00
+        e 0 80 57 00
+        e 0 80 62 00
+        e 0 80 64 00
+        e 0 81 3c 40
+        e 0 81 48 40
+        e 0 81 54 40
+        e 0 81 60 40
+        e 360 90 60 60
+        e 0 90 61 60
+        e 0 90 64 60
+        e 120 80 60 00
+        e 0 80 61 00
+        e 0 80 64 00
+        e 360 90 54 60
+        e 120 80 54 00
+        e 360 90 3c 60
+        e 0 90 3d 60
+        e 0 90 49 60
+        e 0 90 4c 60
+        e 0 90 54 60
+        e 0 90 56 60
+        e 0 90 58 60
+        e 120 80 3c 00
+        e 0 80 3d 00
+        e 0 80 49 00
+        e 0 80 4c 00
+        e 0 80 54 00
+        e 0 80 56 00
+        e 0 80 58 00
+        e 360 90 54 60
+        e 0 90 60 60
+        e 0 90 61 60
+        e 120 80 54 00
+        e 0 80 60 00
+        e 0 80 61 00
+        e 840 90 3c 60
+        e 0 90 3e 60
+        e 0 90 48 60
+        e 0 90 4c 60
+        e 0 90 54 60
+        e 0 90 58 60
+        e 0 90 61 60
+        e 0 90 62 60
+        e 0 90 63 60
+        e 0 90 64 60
+        e 120 80 3c 00
+        e 0 80 3e 00
+        e 0 80 48 00
+        e 0 80 4c 00
+        e 0 80 54 00
+        e 0 80 58 00
+        e 0 80 61 00
+        e 0 80 62 00
+        e 0 80 63 00
+        e 0 80 64 00
+        e 360 90 48 60
+        e 120 80 48 00
+        e 360 90 4a 60
+        e 0 90 4e 60
+        e 0 90 74 60
+        e 120 80 4a 00
+        e 0 80 4e 00
+        e 1800 80 74 00
+        e 0 90 60 60
+        e 0 90 67 60
+        e 120 80 60 00
+        e 360 90 60 60
+        e 120 80 60 00
+        e 1320 80 67 00
+        e 0 90 74 60
+        e 1920 80 74 00
+        E 166080 b0 7b 00
+        GUID {54A57D35-811F-42A6-AB75-F5706122F903}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 17
+        VELLANE 132 128 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "C:\Program Files (x86)\REAPER\Data\Text_Strings\Text Events - Instruments - Guitar.txt"
+        CFGEDITVIEW 2106.715047 83.558099 0 23 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.25000000 45 9 984 711 0 1 1 2 0.00000000 0 0 1 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{A72A6AB8-8B24-4F7A-BAD6-996C84303D0C}'
+    NAME "BASS"
+    PEAKCOL 16777471
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 2 -1
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {A72A6AB8-8B24-4F7A-BAD6-996C84303D0C}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+  >
+  <TRACK '{6B7F9B4B-FF4E-4CE6-9E2D-4C9BD5DAED77}'
+    NAME "PART GUITAR"
+    PEAKCOL 33488896
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 1 1
+    BUSCOMP 1 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 4096 1 7 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {6B7F9B4B-FF4E-4CE6-9E2D-4C9BD5DAED77}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 116 "OVERDRIVE"
+      0 102 "Force HOPO Off"
+      0 101 "Force HOPO On"
+      0 100 "EXPERT Orange"
+      0 99 "EXPERT Blue"
+      0 98 "EXPERT Yellow"
+      0 97 "EXPERT Red"
+      0 96 "EXPERT Green"
+      0 88 "HARD Orange"
+      0 87 "HARD Blue"
+      0 86 "HARD Yellow"
+      0 85 "HARD Red"
+      0 84 "HARD Green"
+      0 76 "MEDIUM Orange"
+      0 75 "MEDIUM Blue"
+      0 74 "MEDIUM Yellow"
+      0 73 "MEDIUM Red"
+      0 72 "MEDIUM Green"
+      0 64 "EASY Orange"
+      0 63 "EASY Blue"
+      0 62 "EASY Yellow"
+      0 61 "EASY Red"
+      0 60 "EASY Green"
+      0 59 "Left Hand Highest"
+      0 40 "Left Hand Lowest"
+      0 58 "-"
+      0 57 "-"
+      0 56 "-"
+      0 55 "-"
+      0 54 "-"
+      0 53 "-"
+      0 52 "-"
+      0 51 "-"
+      0 50 "-"
+      0 49 "-"
+      0 48 "-"
+      0 47 "-"
+      0 46 "-"
+      0 45 "-"
+      0 44 "-"
+      0 43 "-"
+      0 42 "-"
+      0 41 "-"
+      0 115 "----"
+      0 95 "----"
+      0 89 "Force HOPO On"
+      0 77 "----"
+      0 65 "----"
+      0 119 "----"
+      0 120 "BRE (use all 5)"
+      0 121 "BRE"
+      0 122 "BRE"
+      0 123 "BRE"
+      0 124 "BRE"
+      0 90 "Force HOPO Off"
+      0 103 "Solo Marker"
+      0 127 "TRILL MARKER"
+      0 126 "TREMOLO MARKER"
+      0 125 "---"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 0 38 647 480
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 1 0
+      <VST "VSTi: ReaSynth (Cockos)" "reasynth.dll" 0 ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAA4AAAAAAAAAA==
+        AAAAAO++rd4N8K3eAAAAAAAAAAAAAAAAAAAAADm0SD59y9s+tbSxOQ==
+        AAAAALbz/T5VpCs6AAAAAAAAAAAAAAAAAAA=
+      >
+      FLOATPOS 0 0 0 0
+      FXID {52B28C73-185B-48E4-B8F4-1FD7A8848B0F}
+      WAK 0
+      BYPASS 0 0
+      <VST "VSTi: RBN Preview (RBN)" "rbprev_vst.dll" 0 ""
+        dnBicu5e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAAEAAAAAQAAAA==
+        AAAAAAMAqgAAAAAAAAA=
+      >
+      FLOATPOS 32 32 659 497
+      FXID {190BBB08-7A86-476B-BD07-5F71F5CD6F7C}
+      WAK 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {81210F06-DA35-41E7-BA75-C6E1C5689733}
+      IID 19
+      NAME "PART GUITAR"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {61757875-B3D4-49E4-8483-EE351B7D2386}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {47DD2502-C214-4E90-A1A2-D6A7F88E5E32}
+        <X 0 0
+          /wNQQVJUIEdVSVRBUg==
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        E 0 90 55 60
+        E 0 90 56 60
+        E 0 90 62 60
+        E 0 90 64 60
+        E 0 91 3c 64
+        E 0 91 48 64
+        E 0 91 54 64
+        E 0 91 60 64
+        E 120 80 55 00
+        E 0 80 56 00
+        E 0 80 62 00
+        E 0 80 64 00
+        E 0 81 3c 40
+        E 0 81 48 40
+        E 0 81 54 40
+        E 0 81 60 40
+        E 360 90 60 60
+        E 0 90 61 60
+        E 0 90 64 60
+        E 120 80 60 00
+        E 0 80 61 00
+        E 0 80 64 00
+        E 360 90 54 60
+        E 120 80 54 00
+        E 360 90 3c 60
+        E 0 90 3d 60
+        E 0 90 49 60
+        E 0 90 4c 60
+        E 0 90 54 60
+        E 0 90 56 60
+        E 0 90 58 60
+        E 120 80 3c 00
+        E 0 80 3d 00
+        E 0 80 49 00
+        E 0 80 4c 00
+        E 0 80 54 00
+        E 0 80 56 00
+        E 0 80 58 00
+        E 360 90 54 60
+        E 0 90 60 60
+        E 0 90 61 60
+        E 120 80 54 00
+        E 0 80 60 00
+        E 0 80 61 00
+        E 1320 90 48 60
+        E 120 80 48 00
+        E 360 90 4a 60
+        E 0 90 4e 60
+        E 0 90 74 60
+        E 120 80 4a 00
+        E 0 80 4e 00
+        E 1800 80 74 00
+        E 0 90 60 60
+        E 0 90 67 60
+        E 120 80 60 00
+        E 360 90 60 60
+        E 120 80 60 00
+        E 1320 80 67 00
+        E 0 90 74 60
+        E 1920 80 74 00
+        E 166080 b0 7b 00
+        GUID {14D9E950-FB92-4048-8603-8FD02AE3B865}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 18
+        VELLANE 132 128 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "C:\Program Files (x86)\REAPER\Data\Text_Strings\Text Events - Instruments - Guitar.txt"
+        CFGEDITVIEW 2102.489204 83.558099 0 12 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.25000000 107 226 1378 928 0 2 1 2 0.00000000 0 0 1 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{9F550224-967C-4F97-A1EA-EB39E3870DCD}'
+    NAME "GTR"
+    PEAKCOL 27262976
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 2 -1
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {9F550224-967C-4F97-A1EA-EB39E3870DCD}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+  >
+  <TRACK '{45691843-2CBD-4839-933C-D66E6ED0700D}'
+    NAME "PART KEYS"
+    PEAKCOL 33489024
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 1 1
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 1
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {45691843-2CBD-4839-933C-D66E6ED0700D}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 124 "BRE"
+      0 123 "BRE"
+      0 122 "BRE"
+      0 121 "BRE"
+      0 120 "BRE (use all 5)"
+      0 119 "----"
+      0 116 "OVERDRIVE"
+      0 115 "----"
+      0 103 "Solo Marker"
+      0 100 "EXPERT Orange"
+      0 99 "EXPERT Blue"
+      0 98 "EXPERT Yellow"
+      0 97 "EXPERT Red"
+      0 96 "EXPERT Green"
+      0 95 "----"
+      0 88 "HARD Orange"
+      0 87 "HARD Blue"
+      0 86 "HARD Yellow"
+      0 85 "HARD Red"
+      0 84 "HARD Green"
+      0 77 "----"
+      0 76 "MEDIUM Orange"
+      0 75 "MEDIUM Blue"
+      0 74 "MEDIUM Yellow"
+      0 73 "MEDIUM Red"
+      0 72 "MEDIUM Green"
+      0 65 "----"
+      0 64 "EASY Orange"
+      0 63 "EASY Blue"
+      0 62 "EASY Yellow"
+      0 61 "EASY Red"
+      0 60 "EASY Green"
+      0 40 "Left Hand Lowest"
+      0 127 "TRILL MARKER"
+      0 126 "----"
+      0 125 "---"
+      0 102 "----"
+      0 83 "----"
+      0 71 "----"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 0 42 771 585
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0
+      <VST "VSTi: RBN Preview (RBN)" "rbprev_vst.dll" 0 ""
+        dnBicu5e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAAEAAAAAQAAAA==
+        AAAQAAMAqgAAABAAAAA=
+      >
+      FLOATPOS 0 0 0 0
+      FXID {A6BEAEAB-09F5-45CE-9F59-931BBC541FDB}
+      WAK 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 1
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {4043568D-02F7-4603-BEE6-419332B5B1AA}
+      IID 20
+      NAME "PART KEYS"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {984B81E5-122E-4305-8089-E3805FEC5388}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {4A847589-C841-4680-AA7D-B8F6A282D34D}
+        <X 0 0
+          /wNQQVJUIEtFWVM=
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        E 0 90 62 60
+        E 0 90 63 60
+        E 0 90 64 60
+        E 0 92 3c 64
+        E 0 92 48 64
+        E 0 92 54 64
+        E 0 92 60 64
+        E 120 80 62 00
+        E 0 80 63 00
+        E 0 80 64 00
+        E 0 82 3c 40
+        E 0 82 48 40
+        E 0 82 54 40
+        E 0 82 60 40
+        E 1800 90 54 51
+        E 0 90 56 51
+        E 0 90 57 51
+        E 0 90 58 51
+        E 120 80 54 00
+        E 0 80 56 00
+        E 0 80 57 00
+        E 0 80 58 00
+        E 1800 90 48 51
+        E 0 90 4a 51
+        E 0 90 4c 51
+        E 120 80 48 00
+        E 0 80 4a 00
+        E 0 80 4c 00
+        E 1800 90 3c 51
+        E 0 90 3e 51
+        E 120 80 3c 00
+        E 0 80 3e 00
+        E 3720 90 67 60
+        E 3840 80 67 00
+        E 1920 90 74 60
+        E 1920 80 74 00
+        E 158400 b0 7b 00
+        GUID {14D9E950-FB92-4048-8603-8FD02AE3B865}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 19
+        VELLANE 132 128 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "C:\Program Files (x86)\REAPER\Data\Text_Strings\Text Events - Instruments - Keys.txt"
+        CFGEDITVIEW 2022.066119 83.558099 19 12 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.25000000 45 9 984 711 0 0 1 2 0.00000000 0 0 1 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{923305E7-0915-4003-A4A8-D83114AC34AC}'
+    NAME "PRO KEYS: X"
+    PEAKCOL 33489024
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {923305E7-0915-4003-A4A8-D83114AC34AC}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 0 "Range C2-E3"
+      0 2 "Range"
+      0 4 "Range"
+      0 5 "Range F2-A3"
+      0 7 "Range"
+      0 9 "Range A2-C4"
+      0 48 "Lowest playable note C2"
+      0 72 "Highest playable note B#3"
+      0 49 "C#2"
+      0 50 "D2"
+      0 51 "D#2"
+      0 52 "E2"
+      0 53 "F2"
+      0 54 "F#2"
+      0 55 "G2"
+      0 56 "G#2"
+      0 57 "A2"
+      0 58 "A#2"
+      0 59 "B2"
+      0 60 "C3"
+      0 61 "C#3"
+      0 62 "D3"
+      0 63 "D#3"
+      0 64 "E3"
+      0 65 "F3"
+      0 66 "F#3"
+      0 67 "G3"
+      0 68 "G#3"
+      0 69 "A3"
+      0 70 "A#3"
+      0 71 "B3"
+      0 115 "SOLO"
+      0 114 "---"
+      0 126 "GLISSANDO MARKER"
+      0 127 "TRILL MARKER"
+      0 125 "---"
+      0 47 "----"
+      0 124 "BRE"
+      0 123 "BRE"
+      0 122 "BRE"
+      0 121 "BRE"
+      0 120 "BRE (use all 5)"
+      0 119 "----"
+      0 116 "OVERDRIVE"
+      0 10 "---"
+      0 8 "Range"
+      0 6 "Range"
+      0 3 "Range"
+      0 1 "Range"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {4043568D-02F7-4603-BEE6-419332B5B1AA}
+      IID 21
+      NAME "PART REAL_KEYS_X"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {984B81E5-122E-4305-8089-E3805FEC5388}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {45562397-C31A-4232-89E1-AB9059B204F2}
+        <X 0 0
+          /wNQQVJUIFJFQUxfS0VZU19Y
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        E 0 92 3c 64
+        E 120 82 3c 40
+        E 175560 b0 7b 00
+        GUID {14D9E950-FB92-4048-8603-8FD02AE3B865}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 20
+        VELLANE 132 128 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "Text Events List.txt"
+        CFGEDITVIEW -4032.000000 100.000000 0 12 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.25000000 45 9 984 711 0 0 1 2 0.00000000 0 0 1 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{723122BC-29B1-4243-B21F-3A8A091B286E}'
+    NAME "PRO KEYS: H"
+    PEAKCOL 33489024
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {723122BC-29B1-4243-B21F-3A8A091B286E}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 127 "Trill"
+      0 125 "----"
+      0 115 "Solo Marker"
+      0 114 "----"
+      0 72 "Highest playable note B#3"
+      0 71 "B3"
+      0 70 "A#3"
+      0 69 "A3"
+      0 68 "G#3"
+      0 67 "G3"
+      0 66 "F#3"
+      0 65 "F3"
+      0 64 "E3"
+      0 63 "D#3"
+      0 62 "D3"
+      0 61 "C#3"
+      0 60 "C3"
+      0 59 "B2"
+      0 58 "A#2"
+      0 57 "A2"
+      0 56 "G#2"
+      0 55 "G2"
+      0 54 "F#2"
+      0 53 "F2"
+      0 52 "E2"
+      0 51 "D#2"
+      0 50 "D2"
+      0 49 "C#2"
+      0 48 "Lowest playable note C2"
+      0 9 "Range A2-C4"
+      0 7 "Range"
+      0 5 "Range F2-A3"
+      0 4 "Range"
+      0 2 "Range"
+      0 0 "Range C2-E3"
+      0 47 "----"
+      0 120 "BRE (use all 5)"
+      0 121 "BRE"
+      0 122 "BRE"
+      0 123 "BRE"
+      0 124 "BRE"
+      0 119 "----"
+      0 10 "---"
+      0 8 "Range"
+      0 6 "Range"
+      0 3 "Range"
+      0 1 "Range"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {4043568D-02F7-4603-BEE6-419332B5B1AA}
+      IID 22
+      NAME "PART REAL_KEYS_H"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {984B81E5-122E-4305-8089-E3805FEC5388}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {1966502B-0401-42D7-A2CD-061A50CD21B1}
+        <X 0 0
+          /wNQQVJUIFJFQUxfS0VZU19I
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        E 0 90 3c 7f
+        E 120 80 3c 00
+        E 175560 b0 7b 00
+        GUID {14D9E950-FB92-4048-8603-8FD02AE3B865}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 21
+        VELLANE 132 128 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "Text Events List.txt"
+        CFGEDITVIEW -3955.200000 100.000000 0 12 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.25000000 45 9 984 711 0 0 1 2 0.00000000 0 0 1 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{4D1533D3-C410-42DC-9EF3-97B4A7E243CA}'
+    NAME "PRO KEYS: M"
+    PEAKCOL 33489024
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {4D1533D3-C410-42DC-9EF3-97B4A7E243CA}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 127 "Trill"
+      0 125 "----"
+      0 115 "Solo Marker"
+      0 114 "----"
+      0 72 "Highest playable note B#3"
+      0 71 "B3"
+      0 70 "A#3"
+      0 69 "A3"
+      0 68 "G#3"
+      0 67 "G3"
+      0 66 "F#3"
+      0 65 "F3"
+      0 64 "E3"
+      0 63 "D#3"
+      0 62 "D3"
+      0 61 "C#3"
+      0 60 "C3"
+      0 59 "B2"
+      0 58 "A#2"
+      0 57 "A2"
+      0 56 "G#2"
+      0 55 "G2"
+      0 54 "F#2"
+      0 53 "F2"
+      0 52 "E2"
+      0 51 "D#2"
+      0 50 "D2"
+      0 49 "C#2"
+      0 48 "Lowest playable note C2"
+      0 124 "BRE"
+      0 123 "BRE"
+      0 122 "BRE"
+      0 121 "BRE"
+      0 120 "BRE (use all 5)"
+      0 119 "----"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {4043568D-02F7-4603-BEE6-419332B5B1AA}
+      IID 23
+      NAME "PART REAL_KEYS_M"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {984B81E5-122E-4305-8089-E3805FEC5388}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {817BE7FD-A37F-44A4-B71D-DC2FCA629788}
+        <X 0 0
+          /wNQQVJUIFJFQUxfS0VZU19N
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        E 0 90 3c 60
+        E 120 80 3c 00
+        E 175560 b0 7b 00
+        GUID {14D9E950-FB92-4048-8603-8FD02AE3B865}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 22
+        VELLANE 132 128 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "Text Events List.txt"
+        CFGEDITVIEW -3878.400000 100.000000 0 20 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.25000000 45 9 984 711 0 2 1 2 0.00000000 0 0 1 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{DBCD0812-EE63-41D3-A466-CEE00124EEE8}'
+    NAME "PRO KEYS: E"
+    PEAKCOL 33489024
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {DBCD0812-EE63-41D3-A466-CEE00124EEE8}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 127 "Trill"
+      0 125 "----"
+      0 124 "BRE"
+      0 123 "BRE"
+      0 122 "BRE"
+      0 121 "BRE"
+      0 120 "BRE (use all 5)"
+      0 119 "----"
+      0 115 "Solo Marker"
+      0 114 "----"
+      0 72 "Highest playable note B#3"
+      0 71 "B3"
+      0 70 "A#3"
+      0 69 "A3"
+      0 68 "G#3"
+      0 67 "G3"
+      0 66 "F#3"
+      0 65 "F3"
+      0 64 "E3"
+      0 63 "D#3"
+      0 62 "D3"
+      0 61 "C#3"
+      0 60 "C3"
+      0 59 "B2"
+      0 58 "A#2"
+      0 57 "A2"
+      0 56 "G#2"
+      0 55 "G2"
+      0 54 "F#2"
+      0 53 "F2"
+      0 52 "E2"
+      0 51 "D#2"
+      0 50 "D2"
+      0 49 "C#2"
+      0 48 "Lowest playable note C2"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {4043568D-02F7-4603-BEE6-419332B5B1AA}
+      IID 24
+      NAME "PART REAL_KEYS_E"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {984B81E5-122E-4305-8089-E3805FEC5388}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {8A9DCD62-745F-4809-8220-5FD2D84D1D87}
+        <X 0 0
+          /wNQQVJUIFJFQUxfS0VZU19F
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        e 0 90 3c 64
+        e 120 80 3c 00
+        E 175560 b0 7b 00
+        GUID {14D9E950-FB92-4048-8603-8FD02AE3B865}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 23
+        VELLANE 132 128 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "Text Events List.txt"
+        CFGEDITVIEW -3801.600000 100.000000 0 20 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.25000000 45 9 984 711 0 2 1 2 0.00000000 0 0 1 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{979170B3-2CE3-4937-BEE4-50DAB46B9E4C}'
+    NAME "PRO KEYS: RH"
+    PEAKCOL 33489024
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {979170B3-2CE3-4937-BEE4-50DAB46B9E4C}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 127 "Trill"
+      0 125 "----"
+      0 124 "BRE"
+      0 123 "BRE"
+      0 122 "BRE"
+      0 121 "BRE"
+      0 120 "BRE (use all 5)"
+      0 119 "----"
+      0 115 "Solo Marker"
+      0 114 "----"
+      0 72 "Highest Key - C4"
+      0 71 "B3"
+      0 70 "A#3"
+      0 69 "A3"
+      0 68 "G#3"
+      0 67 "G3"
+      0 66 "F#3"
+      0 65 "F3"
+      0 64 "E3"
+      0 63 "D#3"
+      0 62 "D3"
+      0 61 "C#3"
+      0 60 "C3"
+      0 59 "B2"
+      0 58 "A#2"
+      0 57 "A2"
+      0 56 "G#2"
+      0 55 "G2"
+      0 54 "F#2"
+      0 53 "F2"
+      0 52 "E2"
+      0 51 "D#2"
+      0 50 "D2"
+      0 49 "C#2"
+      0 48 "Lowest Key - C2"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {4043568D-02F7-4603-BEE6-419332B5B1AA}
+      IID 25
+      NAME "PRO KEYS: RH"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {984B81E5-122E-4305-8089-E3805FEC5388}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {5B6C49EB-7173-4D2A-BBC8-E5C828465293}
+        <X 0 0
+          /wNQQVJUIEtFWVNfQU5JTV9SSA==
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        E 0 90 3c 64
+        E 120 80 3c 00
+        E 175560 b0 7b 00
+        GUID {14D9E950-FB92-4048-8603-8FD02AE3B865}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 24
+        VELLANE 132 128 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "Text Events List.txt"
+        CFGEDITVIEW -3724.800000 100.000000 0 20 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.25000000 45 9 984 711 0 2 1 2 0.00000000 0 0 1 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{936130AF-9E0B-41BC-8C0A-37D6FECCD47E}'
+    NAME "PRO KEYS: LH"
+    PEAKCOL 33489024
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {936130AF-9E0B-41BC-8C0A-37D6FECCD47E}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 127 "Trill"
+      0 125 "----"
+      0 124 "BRE"
+      0 123 "BRE"
+      0 122 "BRE"
+      0 121 "BRE"
+      0 120 "BRE (use all 5)"
+      0 119 "----"
+      0 115 "Solo Marker"
+      0 114 "----"
+      0 72 "Highest Key - C4"
+      0 71 "B3"
+      0 70 "A#3"
+      0 69 "A3"
+      0 68 "G#3"
+      0 67 "G3"
+      0 66 "F#3"
+      0 65 "F3"
+      0 64 "E3"
+      0 63 "D#3"
+      0 62 "D3"
+      0 61 "C#3"
+      0 60 "C3"
+      0 59 "B2"
+      0 58 "A#2"
+      0 57 "A2"
+      0 56 "G#2"
+      0 55 "G2"
+      0 54 "F#2"
+      0 53 "F2"
+      0 52 "E2"
+      0 51 "D#2"
+      0 50 "D2"
+      0 49 "C#2"
+      0 48 "Lowest Key - C2"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {4043568D-02F7-4603-BEE6-419332B5B1AA}
+      IID 26
+      NAME "PRO KEYS: LH"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {984B81E5-122E-4305-8089-E3805FEC5388}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {372335CE-AF2B-488C-8588-3EF750D0A56C}
+        <X 0 0
+          /wNQQVJUIEtFWVNfQU5JTV9MSA==
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        E 0 90 3c 64
+        E 120 80 3c 00
+        E 175560 b0 7b 00
+        GUID {14D9E950-FB92-4048-8603-8FD02AE3B865}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 25
+        VELLANE 132 128 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "Text Events List.txt"
+        CFGEDITVIEW -2418.332195 78.996591 0 20 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.25000000 45 9 984 711 0 2 1 2 0.00000000 0 0 1 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{2C106875-D700-4EEA-85AC-F262E530EADE}'
+    NAME "KEYS"
+    PEAKCOL 25165888
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 2 -1
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {2C106875-D700-4EEA-85AC-F262E530EADE}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+  >
+  <TRACK '{C298A11E-8E06-44B8-AA31-429ECCE3F0AF}'
+    NAME "PART VOCALS"
+    PEAKCOL 16810239
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 1 1
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 4096 1 7 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {C298A11E-8E06-44B8-AA31-429ECCE3F0AF}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 105 "Phrase Marker"
+      0 36 "Lowest Note C1"
+      0 83 "Highest Note B5"
+      0 82 "A#4"
+      0 81 "A4"
+      0 80 "G#4"
+      0 79 "G4"
+      0 78 "F#4"
+      0 77 "F4"
+      0 76 "E4"
+      0 75 "D#4"
+      0 74 "D4"
+      0 73 "C#4"
+      0 72 "C4"
+      0 71 "B3"
+      0 70 "A#3"
+      0 69 "A3"
+      0 68 "G#3"
+      0 67 "G3"
+      0 66 "F#3"
+      0 65 "F3"
+      0 64 "E3"
+      0 63 "D#3"
+      0 62 "D3"
+      0 61 "C#3"
+      0 60 "C3"
+      0 59 "B2"
+      0 58 "A#2"
+      0 57 "A2"
+      0 56 "G#2"
+      0 55 "G2"
+      0 54 "F#2"
+      0 53 "F2"
+      0 52 "E2"
+      0 51 "D#2"
+      0 50 "D2"
+      0 49 "C#2"
+      0 48 "C2"
+      0 47 "B1"
+      0 46 "A#1"
+      0 45 "A1"
+      0 44 "G#1"
+      0 43 "G1"
+      0 42 "F#1"
+      0 41 "F1"
+      0 40 "E1"
+      0 39 "D#1"
+      0 38 "D!"
+      0 37 "C#1"
+      0 97 "Non-Displayed Percussion"
+      0 96 "Displayed Percussion"
+      0 104 "----"
+      0 95 "----"
+      0 116 "OVERDRIVE"
+      0 115 "----"
+      0 2 "---"
+      0 1 "Lyric Shift"
+      0 0 "Range Shift"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 572 504 708 480
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0
+      <JS "IX/MIDI_Tool II" ""
+        0.000000 85.000000 127.000000 0.000000 0.000000 0.000000 100.000000 0.000000 0.000000 127.000000 0.000000 0.000000 1.000000 0.000000 0.000000 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+      >
+      FLOATPOS 0 0 0 0
+      FXID {CA785021-0433-497E-9A6C-EE23A1BC21B0}
+      WAK 0
+      BYPASS 1 0
+      <VST "VSTi: ReaSynth (Cockos)" "reasynth.dll" 0 ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAA4AAAAAAAAAA==
+        AAAAAO++rd4N8K3eppvEOxe30TqcxKA+c2jRPgAAAADMm4A+6WeIPQ==
+        AAAAAAAAAD8AAIA/6SaxPgAAAD8AAAAAAAA=
+      >
+      FLOATPOS 32 32 338 405
+      FXID {F124DD19-73B4-4CD5-B659-E246F2A3D0B3}
+      WAK 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {9C9617EC-369A-41B9-80F6-31F4222F13F6}
+      IID 27
+      NAME "PART VOCALS"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {8E872349-00D8-4243-95D7-0B92852E4EE5}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {61260914-D32F-4E8C-AB3C-B849090DF86E}
+        <X 0 0
+          /wNQQVJUIFZPQ0FMUw==
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        E 0 93 69 64
+        <X 960 0
+          /wVIZS0=
+        >
+        E 0 93 3c 64
+        <X 480 0
+          /wVsbG8=
+        >
+        E 0 90 3d 60
+        E 0 83 3c 40
+        E 480 80 3d 00
+        E 24240 83 69 40
+        E 149520 b0 7b 00
+        GUID {C9A1A4CA-4224-4672-91C0-075BEB2A8650}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 26
+        VELLANE 132 128 128
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_vox-other.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "Text Events List.txt"
+        CFGEDITVIEW 2022.066119 83.558099 0 13 0 0 0
+        CFGEDIT 1 1 0 0 1 0 1 1 1 1 1 0.25000000 141 -15 1608 862 0 2 1 2 0.00000000 0 0 1 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{251E5C31-9F67-4ECF-B501-A1AA8510C640}'
+    NAME "PART HARM1"
+    PEAKCOL 16810239
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 4096 1 7 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {251E5C31-9F67-4ECF-B501-A1AA8510C640}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 105 "Phrase Marker"
+      0 36 "Lowest Note C1"
+      0 83 "Highest Note B4"
+      0 82 "A#4"
+      0 81 "A4"
+      0 80 "G#4"
+      0 79 "G4"
+      0 78 "F#4"
+      0 77 "F4"
+      0 76 "E4"
+      0 75 "D#4"
+      0 74 "D4"
+      0 73 "C#4"
+      0 72 "C4"
+      0 71 "B3"
+      0 70 "A#3"
+      0 69 "A3"
+      0 68 "G#3"
+      0 67 "G3"
+      0 66 "F#3"
+      0 65 "F3"
+      0 64 "E3"
+      0 63 "D#3"
+      0 62 "D3"
+      0 61 "C##"
+      0 60 "C3"
+      0 59 "B2"
+      0 58 "A#2"
+      0 57 "A2"
+      0 56 "G#2"
+      0 55 "G2"
+      0 54 "F#2"
+      0 53 "F2"
+      0 52 "E2"
+      0 51 "D#2"
+      0 50 "D2"
+      0 49 "C#2"
+      0 48 "C2"
+      0 47 "B1"
+      0 46 "A#1"
+      0 45 "A1"
+      0 44 "G#1"
+      0 43 "G1"
+      0 42 "F#1"
+      0 41 "F1"
+      0 40 "E1"
+      0 39 "D#1"
+      0 38 "D1"
+      0 37 "C#1"
+      0 97 "Non-Displayed Percussion"
+      0 96 "Displayed Percussion"
+      0 104 "----"
+      0 95 "----"
+      0 116 "OVERDRIVE"
+      0 115 "----"
+      0 12 "Lane Shift"
+      0 13 "Lyric Shift"
+      0 35 "----"
+      0 84 "---"
+      0 2 "---"
+      0 1 "Lyric Shift"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 572 504 708 480
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0
+      <JS "IX/MIDI_Tool II" ""
+        0.000000 85.000000 127.000000 0.000000 0.000000 0.000000 100.000000 0.000000 0.000000 127.000000 0.000000 0.000000 1.000000 0.000000 0.000000 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+      >
+      FLOATPOS 0 0 0 0
+      FXID {CA785021-0433-497E-9A6C-EE23A1BC21B0}
+      WAK 0
+      BYPASS 1 0
+      <VST "VSTi: ReaSynth (Cockos)" "reasynth.dll" 0 ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAA4AAAAAAAAAA==
+        AAAAAO++rd4N8K3eppvEOxe30TqcxKA+c2jRPgAAAADMm4A+6WeIPQ==
+        AAAAAAAAAD8AAIA/6SaxPgAAAD8AAAAAAAA=
+      >
+      FLOATPOS 32 32 338 405
+      FXID {F124DD19-73B4-4CD5-B659-E246F2A3D0B3}
+      WAK 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {9C9617EC-369A-41B9-80F6-31F4222F13F6}
+      IID 28
+      NAME "HARM1"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {8E872349-00D8-4243-95D7-0B92852E4EE5}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {2D215691-A220-4344-9D4C-2AD7A781F5AE}
+        <X 0 0
+          /wNIQVJNMQ==
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        E 0 93 69 64
+        <X 960 0
+          /wVMeXJpYw==
+        >
+        E 0 93 3c 64
+        E 960 83 3c 40
+        E 960 90 3b 60
+        E 960 80 3b 00
+        E 0 90 3e 60
+        E 1440 80 3e 00
+        E 480 83 69 40
+        E 169920 b0 7b 00
+        GUID {C9A1A4CA-4224-4672-91C0-075BEB2A8650}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 27
+        VELLANE 132 128 128
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_vox-other.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "Text Events List.txt"
+        CFGEDITVIEW 2504.604625 83.558099 0 12 0 0 0
+        CFGEDIT 1 1 0 0 1 1 1 1 1 1 1 0.25000000 34 49 1250 833 0 2 1 2 0.00000000 0 0 0 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{95458BD3-72AF-43A4-92BE-2D4CB133B3AF}'
+    NAME "PART HARM2"
+    PEAKCOL 16810239
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 4096 1 7 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {95458BD3-72AF-43A4-92BE-2D4CB133B3AF}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 105 "Phrase Marker"
+      0 36 "Lowest Note C1"
+      0 83 "Highest Note B4"
+      0 82 "A#4"
+      0 81 "A4"
+      0 80 "G#4"
+      0 79 "G4"
+      0 78 "F#4"
+      0 77 "F4"
+      0 76 "E4"
+      0 75 "D#4"
+      0 74 "D4"
+      0 73 "C#4"
+      0 72 "C4"
+      0 71 "B3"
+      0 70 "A#3"
+      0 69 "A3"
+      0 68 "G#3"
+      0 67 "G3"
+      0 66 "F#3"
+      0 65 "F3"
+      0 64 "E3"
+      0 63 "D#3"
+      0 62 "D3"
+      0 61 "C##"
+      0 60 "C3"
+      0 59 "B2"
+      0 58 "A#2"
+      0 57 "A2"
+      0 56 "G#2"
+      0 55 "G2"
+      0 54 "F#2"
+      0 53 "F2"
+      0 52 "E2"
+      0 51 "D#2"
+      0 50 "D2"
+      0 49 "C#2"
+      0 48 "C2"
+      0 47 "B1"
+      0 46 "A#1"
+      0 45 "A1"
+      0 44 "G#1"
+      0 43 "G1"
+      0 42 "F#1"
+      0 41 "F1"
+      0 40 "E1"
+      0 39 "D#1"
+      0 38 "D1"
+      0 37 "C#1"
+      0 97 "Non-Displayed Percussion"
+      0 96 "Displayed Percussion"
+      0 104 "----"
+      0 95 "----"
+      0 116 "OVERDRIVE"
+      0 115 "----"
+      0 35 "----"
+      0 13 "Lyric Shift"
+      0 12 "Lane Shift"
+      0 84 "---"
+      0 2 "---"
+      0 1 "Lyric Shift"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 572 504 708 480
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0
+      <JS "IX/MIDI_Tool II" ""
+        0.000000 85.000000 127.000000 0.000000 0.000000 0.000000 100.000000 0.000000 0.000000 127.000000 0.000000 0.000000 1.000000 0.000000 0.000000 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+      >
+      FLOATPOS 0 0 0 0
+      FXID {CA785021-0433-497E-9A6C-EE23A1BC21B0}
+      WAK 0
+      BYPASS 1 0
+      <VST "VSTi: ReaSynth (Cockos)" "reasynth.dll" 0 ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAA4AAAAAAAAAA==
+        AAAAAO++rd4N8K3eppvEOxe30TqcxKA+c2jRPgAAAADMm4A+6WeIPQ==
+        AAAAAAAAAD8AAIA/6SaxPgAAAD8AAAAAAAA=
+      >
+      FLOATPOS 32 32 338 405
+      FXID {F124DD19-73B4-4CD5-B659-E246F2A3D0B3}
+      WAK 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {9C9617EC-369A-41B9-80F6-31F4222F13F6}
+      IID 29
+      NAME "HARM2"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {8E872349-00D8-4243-95D7-0B92852E4EE5}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {5FA652EA-DE08-4A24-829B-3E5C2B5DEBD9}
+        <X 0 0
+          /wNIQVJNMg==
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        E 0 93 69 64
+        <X 960 0
+          /wVMeXJpYw==
+        >
+        E 0 93 3c 64
+        E 960 83 3c 40
+        E 5760 90 3f 60
+        E 960 80 3f 00
+        e 0 90 41 60
+        e 960 80 41 00
+        E 0 83 69 40
+        E 166080 b0 7b 00
+        GUID {C9A1A4CA-4224-4672-91C0-075BEB2A8650}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 28
+        VELLANE 132 128 128
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_vox-other.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "Text Events List.txt"
+        CFGEDITVIEW 2504.604625 83.558099 0 12 0 0 0
+        CFGEDIT 1 1 0 0 1 0 1 1 1 1 1 0.25000000 34 49 1250 833 0 2 1 2 0.00000000 0 0 0 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{99E06830-DDA9-4250-ABCA-B5175A640DB6}'
+    NAME "PART HARM3"
+    PEAKCOL 16810239
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 4096 1 7 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {99E06830-DDA9-4250-ABCA-B5175A640DB6}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 36 "Lowest Note C1"
+      0 83 "Highest Note B4"
+      0 82 "A#4"
+      0 81 "A4"
+      0 80 "G#4"
+      0 79 "G4"
+      0 78 "F#4"
+      0 77 "F4"
+      0 76 "E4"
+      0 75 "D#4"
+      0 74 "D4"
+      0 73 "C#4"
+      0 72 "C4"
+      0 71 "B3"
+      0 70 "A#3"
+      0 69 "A3"
+      0 68 "G#3"
+      0 67 "G3"
+      0 66 "F#3"
+      0 65 "F3"
+      0 64 "E3"
+      0 63 "D#3"
+      0 62 "D3"
+      0 61 "C##"
+      0 60 "C3"
+      0 59 "B2"
+      0 58 "A#2"
+      0 57 "A2"
+      0 56 "G#2"
+      0 55 "G2"
+      0 54 "F#2"
+      0 53 "F2"
+      0 52 "E2"
+      0 51 "D#2"
+      0 50 "D2"
+      0 49 "C#2"
+      0 48 "C2"
+      0 47 "B1"
+      0 46 "A#1"
+      0 45 "A1"
+      0 44 "G#1"
+      0 43 "G1"
+      0 42 "F#1"
+      0 41 "F1"
+      0 40 "E1"
+      0 39 "D#1"
+      0 38 "D1"
+      0 37 "C#1"
+      0 97 "Non-Displayed Percussion"
+      0 96 "Displayed Percussion"
+      0 104 "----"
+      0 95 "----"
+      0 116 "OVERDRIVE"
+      0 105 "Phrase Marker"
+      0 84 "---"
+      0 2 "---"
+      0 1 "Lyric Shift"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 572 504 708 480
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0
+      <JS "IX/MIDI_Tool II" ""
+        0.000000 85.000000 127.000000 0.000000 0.000000 0.000000 100.000000 0.000000 0.000000 127.000000 0.000000 0.000000 1.000000 0.000000 0.000000 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+      >
+      FLOATPOS 0 0 0 0
+      FXID {CA785021-0433-497E-9A6C-EE23A1BC21B0}
+      WAK 0
+      BYPASS 1 0
+      <VST "VSTi: ReaSynth (Cockos)" "reasynth.dll" 0 ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAA4AAAAAAAAAA==
+        AAAAAO++rd4N8K3eppvEOxe30TqcxKA+c2jRPgAAAADMm4A+6WeIPQ==
+        AAAAAAAAAD8AAIA/6SaxPgAAAD8AAAAAAAA=
+      >
+      FLOATPOS 32 32 338 405
+      FXID {F124DD19-73B4-4CD5-B659-E246F2A3D0B3}
+      WAK 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {9C9617EC-369A-41B9-80F6-31F4222F13F6}
+      IID 30
+      NAME "HARM3"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {8E872349-00D8-4243-95D7-0B92852E4EE5}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {01EBA767-ADAC-46C9-9696-7CF61B8B02E6}
+        <X 0 0
+          /wNIQVJNMw==
+        >
+        <X 3840 0
+          /wFbcGxheV0=
+        >
+        <X 960 0
+          /wVMeXJpYw==
+        >
+        E 0 93 3c 64
+        E 960 83 3c 40
+        E 1920 90 3d 60
+        E 960 80 3d 00
+        e 0 90 3e 60
+        e 960 80 3e 00
+        E 169920 b0 7b 00
+        GUID {C9A1A4CA-4224-4672-91C0-075BEB2A8650}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 29
+        VELLANE 132 128 128
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_vox-other.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "Text Events List.txt"
+        CFGEDITVIEW 2504.604625 83.558099 0 12 0 0 0
+        CFGEDIT 1 1 0 0 1 0 1 1 1 1 1 0.25000000 34 49 1250 833 0 2 1 2 0.00000000 0 0 0 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{B9BD6503-469F-4073-829C-1B38E7873FC3}'
+    NAME "VOCALS"
+    PEAKCOL 16810239
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 4096 1 7 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {B9BD6503-469F-4073-829C-1B38E7873FC3}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 36 "Lowest Note"
+      0 83 "Highest Note"
+      0 82 "A#"
+      0 81 "A"
+      0 80 "G#"
+      0 79 "G"
+      0 78 "F#"
+      0 77 "F"
+      0 76 "E#"
+      0 75 "E"
+      0 74 "D"
+      0 73 "C#"
+      0 72 "C4"
+      0 71 "B"
+      0 70 "A#"
+      0 69 "A"
+      0 68 "G#"
+      0 67 "G"
+      0 66 "F#"
+      0 65 "F"
+      0 64 "E#"
+      0 63 "E"
+      0 62 "D"
+      0 61 "C#"
+      0 60 "C3"
+      0 59 "B"
+      0 58 "A#"
+      0 57 "A"
+      0 56 "G#"
+      0 55 "G"
+      0 54 "F#"
+      0 53 "F"
+      0 52 "E#"
+      0 51 "E"
+      0 50 "D"
+      0 49 "C#"
+      0 48 "C2"
+      0 47 "B"
+      0 46 "A#"
+      0 45 "A"
+      0 44 "G#"
+      0 43 "G"
+      0 42 "F#"
+      0 41 "F"
+      0 40 "E#"
+      0 39 "E"
+      0 38 "D"
+      0 37 "C#"
+      0 97 "Non-Displayed Percussion"
+      0 96 "Displayed Percussion"
+      0 104 "----"
+      0 95 "----"
+      0 116 "OVERDRIVE"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 572 504 708 480
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0
+      <JS "IX/MIDI_Tool II" ""
+        0.000000 85.000000 127.000000 0.000000 0.000000 0.000000 100.000000 0.000000 0.000000 127.000000 0.000000 0.000000 1.000000 0.000000 0.000000 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+      >
+      FLOATPOS 0 0 0 0
+      FXID {CA785021-0433-497E-9A6C-EE23A1BC21B0}
+      WAK 0
+      BYPASS 1 0
+      <VST "VSTi: ReaSynth (Cockos)" "reasynth.dll" 0 ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAA4AAAAAAAAAA==
+        AAAAAO++rd4N8K3eppvEOxe30TqcxKA+c2jRPgAAAADMm4A+6WeIPQ==
+        AAAAAAAAAD8AAIA/6SaxPgAAAD8AAAAAAAA=
+      >
+      FLOATPOS 32 32 338 405
+      FXID {F124DD19-73B4-4CD5-B659-E246F2A3D0B3}
+      WAK 0
+    >
+  >
+  <TRACK '{28CA9B8B-1034-4E31-B445-17AB50EB667E}'
+    NAME "HARM 1"
+    PEAKCOL 16810239
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 4096 1 7 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {28CA9B8B-1034-4E31-B445-17AB50EB667E}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 36 "Lowest Note"
+      0 83 "Highest Note"
+      0 82 "A#"
+      0 81 "A"
+      0 80 "G#"
+      0 79 "G"
+      0 78 "F#"
+      0 77 "F"
+      0 76 "E#"
+      0 75 "E"
+      0 74 "D"
+      0 73 "C#"
+      0 72 "C4"
+      0 71 "B"
+      0 70 "A#"
+      0 69 "A"
+      0 68 "G#"
+      0 67 "G"
+      0 66 "F#"
+      0 65 "F"
+      0 64 "E#"
+      0 63 "E"
+      0 62 "D"
+      0 61 "C#"
+      0 60 "C3"
+      0 59 "B"
+      0 58 "A#"
+      0 57 "A"
+      0 56 "G#"
+      0 55 "G"
+      0 54 "F#"
+      0 53 "F"
+      0 52 "E#"
+      0 51 "E"
+      0 50 "D"
+      0 49 "C#"
+      0 48 "C2"
+      0 47 "B"
+      0 46 "A#"
+      0 45 "A"
+      0 44 "G#"
+      0 43 "G"
+      0 42 "F#"
+      0 41 "F"
+      0 40 "E#"
+      0 39 "E"
+      0 38 "D"
+      0 37 "C#"
+      0 97 "Non-Displayed Percussion"
+      0 96 "Displayed Percussion"
+      0 104 "----"
+      0 95 "----"
+      0 116 "OVERDRIVE"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 572 504 708 480
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0
+      <JS "IX/MIDI_Tool II" ""
+        0.000000 85.000000 127.000000 0.000000 0.000000 0.000000 100.000000 0.000000 0.000000 127.000000 0.000000 0.000000 1.000000 0.000000 0.000000 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+      >
+      FLOATPOS 0 0 0 0
+      FXID {CA785021-0433-497E-9A6C-EE23A1BC21B0}
+      WAK 0
+      BYPASS 1 0
+      <VST "VSTi: ReaSynth (Cockos)" "reasynth.dll" 0 ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAA4AAAAAAAAAA==
+        AAAAAO++rd4N8K3eppvEOxe30TqcxKA+c2jRPgAAAADMm4A+6WeIPQ==
+        AAAAAAAAAD8AAIA/6SaxPgAAAD8AAAAAAAA=
+      >
+      FLOATPOS 32 32 338 405
+      FXID {F124DD19-73B4-4CD5-B659-E246F2A3D0B3}
+      WAK 0
+    >
+  >
+  <TRACK '{849BBE82-5493-44EE-B994-13E07DEF4F22}'
+    NAME "HARM 2"
+    PEAKCOL 16810239
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 4096 1 7 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {849BBE82-5493-44EE-B994-13E07DEF4F22}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 36 "Lowest Note"
+      0 83 "Highest Note"
+      0 82 "A#"
+      0 81 "A"
+      0 80 "G#"
+      0 79 "G"
+      0 78 "F#"
+      0 77 "F"
+      0 76 "E#"
+      0 75 "E"
+      0 74 "D"
+      0 73 "C#"
+      0 72 "C4"
+      0 71 "B"
+      0 70 "A#"
+      0 69 "A"
+      0 68 "G#"
+      0 67 "G"
+      0 66 "F#"
+      0 65 "F"
+      0 64 "E#"
+      0 63 "E"
+      0 62 "D"
+      0 61 "C#"
+      0 60 "C3"
+      0 59 "B"
+      0 58 "A#"
+      0 57 "A"
+      0 56 "G#"
+      0 55 "G"
+      0 54 "F#"
+      0 53 "F"
+      0 52 "E#"
+      0 51 "E"
+      0 50 "D"
+      0 49 "C#"
+      0 48 "C2"
+      0 47 "B"
+      0 46 "A#"
+      0 45 "A"
+      0 44 "G#"
+      0 43 "G"
+      0 42 "F#"
+      0 41 "F"
+      0 40 "E#"
+      0 39 "E"
+      0 38 "D"
+      0 37 "C#"
+      0 97 "Non-Displayed Percussion"
+      0 96 "Displayed Percussion"
+      0 104 "----"
+      0 95 "----"
+      0 116 "OVERDRIVE"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 572 504 708 480
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0
+      <JS "IX/MIDI_Tool II" ""
+        0.000000 85.000000 127.000000 0.000000 0.000000 0.000000 100.000000 0.000000 0.000000 127.000000 0.000000 0.000000 1.000000 0.000000 0.000000 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+      >
+      FLOATPOS 0 0 0 0
+      FXID {CA785021-0433-497E-9A6C-EE23A1BC21B0}
+      WAK 0
+      BYPASS 1 0
+      <VST "VSTi: ReaSynth (Cockos)" "reasynth.dll" 0 ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAA4AAAAAAAAAA==
+        AAAAAO++rd4N8K3eppvEOxe30TqcxKA+c2jRPgAAAADMm4A+6WeIPQ==
+        AAAAAAAAAD8AAIA/6SaxPgAAAD8AAAAAAAA=
+      >
+      FLOATPOS 32 32 338 405
+      FXID {F124DD19-73B4-4CD5-B659-E246F2A3D0B3}
+      WAK 0
+    >
+  >
+  <TRACK '{98C3EEDD-F8E4-4B7F-B70B-843042304A35}'
+    NAME "HARM 3"
+    PEAKCOL 16810239
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 2 -1
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 4096 1 7 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {98C3EEDD-F8E4-4B7F-B70B-843042304A35}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 36 "Lowest Note"
+      0 83 "Highest Note"
+      0 82 "A#"
+      0 81 "A"
+      0 80 "G#"
+      0 79 "G"
+      0 78 "F#"
+      0 77 "F"
+      0 76 "E#"
+      0 75 "E"
+      0 74 "D"
+      0 73 "C#"
+      0 72 "C4"
+      0 71 "B"
+      0 70 "A#"
+      0 69 "A"
+      0 68 "G#"
+      0 67 "G"
+      0 66 "F#"
+      0 65 "F"
+      0 64 "E#"
+      0 63 "E"
+      0 62 "D"
+      0 61 "C#"
+      0 60 "C3"
+      0 59 "B"
+      0 58 "A#"
+      0 57 "A"
+      0 56 "G#"
+      0 55 "G"
+      0 54 "F#"
+      0 53 "F"
+      0 52 "E#"
+      0 51 "E"
+      0 50 "D"
+      0 49 "C#"
+      0 48 "C2"
+      0 47 "B"
+      0 46 "A#"
+      0 45 "A"
+      0 44 "G#"
+      0 43 "G"
+      0 42 "F#"
+      0 41 "F"
+      0 40 "E#"
+      0 39 "E"
+      0 38 "D"
+      0 37 "C#"
+      0 97 "Non-Displayed Percussion"
+      0 96 "Displayed Percussion"
+      0 104 "----"
+      0 95 "----"
+      0 116 "OVERDRIVE"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      WNDRECT 572 504 708 480
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+      BYPASS 0 0
+      <JS "IX/MIDI_Tool II" ""
+        0.000000 85.000000 127.000000 0.000000 0.000000 0.000000 100.000000 0.000000 0.000000 127.000000 0.000000 0.000000 1.000000 0.000000 0.000000 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+      >
+      FLOATPOS 0 0 0 0
+      FXID {CA785021-0433-497E-9A6C-EE23A1BC21B0}
+      WAK 0
+      BYPASS 1 0
+      <VST "VSTi: ReaSynth (Cockos)" "reasynth.dll" 0 ""
+        eXNlcu9e7f4AAAAAAgAAAAEAAAAAAAAAAgAAAAAAAAA4AAAAAAAAAA==
+        AAAAAO++rd4N8K3eppvEOxe30TqcxKA+c2jRPgAAAADMm4A+6WeIPQ==
+        AAAAAAAAAD8AAIA/6SaxPgAAAD8AAAAAAAA=
+      >
+      FLOATPOS 32 32 338 405
+      FXID {F124DD19-73B4-4CD5-B659-E246F2A3D0B3}
+      WAK 0
+    >
+  >
+  <TRACK '{6F6009A7-A238-4C7B-BF52-E1BB0C2D263F}'
+    NAME "TRKS"
+    PEAKCOL 31770210
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {6F6009A7-A238-4C7B-BF52-E1BB0C2D263F}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+  >
+  <TRACK '{4BCC1CF3-63A3-43C4-A155-D3593AD88A10}'
+    NAME "EVENTS"
+    PEAKCOL 29393024
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {4BCC1CF3-63A3-43C4-A155-D3593AD88A10}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 391.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {86A06D27-867C-4398-9CE6-8F0526B3B594}
+      IID 31
+      NAME "EVENTS"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {584C8192-4FF3-4E29-8138-2E6BD568B61A}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {93B1B364-DB3D-4166-9EFD-59DC1E71095E}
+        <X 0 0
+          /wNFVkVOVFM=
+        >
+        <X 0 0
+          /wFbcHJjX3VnY19zZWN0aW9uXzEwXzBd
+        >
+        <X 480 0
+          /wFbY3Jvd2Rfbm9jbGFwXQ==
+        >
+        <X 3360 0
+          /wFbY3Jvd2Rfbm9ybWFsXQ==
+        >
+        <X 11520 0
+          /wFbbXVzaWNfc3RhcnRd
+        >
+        <X 5760 0
+          /wFbcHJjX3VnY19zZWN0aW9uXzEwXzEwXQ==
+        >
+        <X 23040 0
+          /wFbcHJjX3VnY19zZWN0aW9uXzEwXzIwXQ==
+        >
+        <X 23040 0
+          /wFbcHJjX3VnY19zZWN0aW9uXzEwXzMwXQ==
+        >
+        <X 23040 0
+          /wFbcHJjX3VnY19zZWN0aW9uXzEwXzQwXQ==
+        >
+        <X 23040 0
+          /wFbcHJjX3VnY19zZWN0aW9uXzEwXzUwXQ==
+        >
+        <X 23040 0
+          /wFbcHJjX3VnY19zZWN0aW9uXzEwXzYwXQ==
+        >
+        <X 23040 0
+          /wFbcHJjX3VnY19zZWN0aW9uXzEwXzcwXQ==
+        >
+        <X 1920 0
+          /wFbcHJjX3VnY19zZWN0aW9uXzEwXzgwXQ==
+        >
+        <X 1920 0
+          /wFbcHJjX3VnY19zZWN0aW9uXzEwXzkwXQ==
+        >
+        <X 12060 0
+          /wFbbXVzaWNfZW5kXQ==
+        >
+        <X 3300 0
+          /wFbZW5kXQ==
+        >
+        E 196800 b0 7b 00
+        GUID {40AD7956-A22A-434A-8513-4D3792B9DF69}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 30
+        VELLANE 132 230 128
+        COLORMAP "C:\Program Files\REAPER\Data\color_maps\rockband_vox-other.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "C:\Program Files (x86)\REAPER\Data\Text_Strings\Text Events - Events.txt"
+        CFGEDITVIEW 68285.827021 0.093971 0 12 0 0 0
+        CFGEDIT 1 1 0 0 1 1 1 1 1 1 1 0.12500000 230 186 1654 951 0 0 0 2 0.00000000 0 0 0 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{59B7CDF0-8137-473C-BE61-7351C7777889}'
+    NAME "VENUES"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 1 1
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {59B7CDF0-8137-473C-BE61-7351C7777889}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+  >
+  <TRACK '{1529008F-97D2-43EB-8634-7C5A7418AD90}'
+    NAME "VENUE"
+    PEAKCOL 16842496
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 0.99999797755442 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 1 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {1529008F-97D2-43EB-8634-7C5A7418AD90}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 87 "Guitarist Sing Along"
+      0 86 "Drummer Sing Along"
+      0 85 "Bassist Sing Along"
+      0 84 "----"
+      0 40 "Spotlight on Vocals"
+      0 39 "Spotlight on Guitar"
+      0 38 "Spotlight on Drums"
+      0 37 "Spotlight on Bass"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {548DF56E-8849-49C0-ADDC-B71C4CCA67DC}
+      IID 32
+      NAME "VENUE"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {7B52349C-A800-49F6-B396-E69FA49FD647}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {E542C029-B9F3-4234-B31A-D89CCB2303A4}
+        <X 0 0
+          /wNWRU5VRQ==
+        >
+        <X 0 0
+          /wFbbGlnaHRpbmcgKGludHJvKV0=
+        >
+        <X 0 0
+          /wFbUHJvRmlsbV9hLnBwXQ==
+        >
+        <X 0 0
+          /wFbY29vcF9hbGxfZmFyXQ==
+        >
+        <X 3810 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 11520 0
+          /wFbY29vcF9kX25lYXJd
+        >
+        <X 3390 0
+          /wFbY29vcF9hbGxfYmVoaW5kXQ==
+        >
+        <X 2880 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 2880 0
+          /wFbY29vcF9rX25lYXJd
+        >
+        <X 960 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 2880 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 1920 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 3840 0
+          /wFbY29vcF92X2JlaGluZF0=
+        >
+        <X 1890 0
+          /wFbY29vcF9hbGxfbmVhcl0=
+        >
+        <X 3840 0
+          /wFbY29vcF9ia19uZWFyXQ==
+        >
+        <X 3870 0
+          /wFbY29vcF9rdl9uZWFyXQ==
+        >
+        <X 2880 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 960 0
+          /wFbY29vcF9mcm9udF9iZWhpbmRd
+        >
+        <X 1920 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 2400 0
+          /wFbY29vcF9hbGxfYmVoaW5kXQ==
+        >
+        <X 1920 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 3825 0
+          /wFbY29vcF9rX25lYXJd
+        >
+        <X 1935 0
+          /wFbY29vcF9iZ19iZWhpbmRd
+        >
+        <X 3810 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 1440 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 3855 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 3825 0
+          /wFbY29vcF9iZ19uZWFyXQ==
+        >
+        <X 3855 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 1425 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3390 0
+          /wFbY29vcF9iZ19iZWhpbmRd
+        >
+        <X 3840 0
+          /wFbY29vcF9hbGxfbmVhcl0=
+        >
+        <X 1890 0
+          /wFbY29vcF9hbGxfZmFyXQ==
+        >
+        <X 3870 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 1905 0
+          /wFbY29vcF9rX25lYXJd
+        >
+        <X 3840 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 1905 0
+          /wFbY29vcF9idl9uZWFyXQ==
+        >
+        <X 2400 0
+          /wFbY29vcF9iZ19iZWhpbmRd
+        >
+        <X 3870 0
+          /wFbY29vcF9mcm9udF9iZWhpbmRd
+        >
+        <X 3810 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 990 0
+          /wFbY29vcF9hbGxfbmVhcl0=
+        >
+        <X 1425 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 2400 0
+          /wFbY29vcF9rX2JlaGluZF0=
+        >
+        <X 2865 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 3390 0
+          /wFbY29vcF9idl9uZWFyXQ==
+        >
+        <X 3840 0
+          /wFbY29vcF9kX25lYXJd
+        >
+        <X 1920 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 2400 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 1905 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 1935 0
+          /wFbY29vcF9ia19uZWFyXQ==
+        >
+        <X 3840 0
+          /wFbY29vcF9hbGxfbmVhcl0=
+        >
+        <X 1890 0
+          /wFbY29vcF9rdl9uZWFyXQ==
+        >
+        <X 1440 0
+          /wFbY29vcF92X2JlaGluZF0=
+        >
+        <X 2895 0
+          /wFbY29vcF9na19uZWFyXQ==
+        >
+        <X 2400 0
+          /wFbY29vcF9idl9uZWFyXQ==
+        >
+        <X 2400 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 975 0
+          /wFbY29vcF9kX25lYXJd
+        >
+        <X 2385 0
+          /wFbY29vcF9hbGxfZmFyXQ==
+        >
+        <X 1905 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 1935 0
+          /wFbY29vcF9na19iZWhpbmRd
+        >
+        <X 1905 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 1920 0
+          /wFbY29vcF9nX2JlaGluZF0=
+        >
+        <X 2400 0
+          /wFbY29vcF9ia19iZWhpbmRd
+        >
+        <X 2880 0
+          /wFbY29vcF9ndl9uZWFyXQ==
+        >
+        <X 3855 0
+          /wFbY29vcF9iZ19uZWFyXQ==
+        >
+        <X 1935 0
+          /wFbY29vcF9hbGxfbmVhcl0=
+        >
+        <X 1920 0
+          /wFbY29vcF9ia19uZWFyXQ==
+        >
+        <X 1905 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 1935 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 1425 0
+          /wFbY29vcF9mcm9udF9iZWhpbmRd
+        >
+        <X 975 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 1890 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 1935 0
+          /wFbY29vcF9hbGxfYmVoaW5kXQ==
+        >
+        <X 1425 0
+          /wFbY29vcF9ndl9iZWhpbmRd
+        >
+        <X 3870 0
+          /wFbY29vcF92X2JlaGluZF0=
+        >
+        <X 2880 0
+          /wFbY29vcF9iZ19uZWFyXQ==
+        >
+        <X 2865 0
+          /wFbY29vcF92X2JlaGluZF0=
+        >
+        <X 960 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 2895 0
+          /wFbY29vcF9kX25lYXJd
+        >
+        <X 3810 0
+          /wFbY29vcF9hbGxfbmVhcl0=
+        >
+        <X 2880 0
+          /wFbY29vcF9idl9uZWFyXQ==
+        >
+        <X 1920 0
+          /wFbY29vcF9rdl9uZWFyXQ==
+        >
+        <X 960 0
+          /wFbY29vcF9hbGxfbmVhcl0=
+        >
+        <X 1920 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 1950 0
+          /wFbY29vcF9rX25lYXJd
+        >
+        <X 1890 0
+          /wFbY29vcF9iZ19uZWFyXQ==
+        >
+        <X 2430 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 3360 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 3840 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 480 0
+          /wFbbGlnaHRpbmcgKGJsYWNrb3V0X3Nwb3QpXQ==
+        >
+        <X 0 0
+          /wFbUHJvRmlsbV9hLnBwXQ==
+        >
+        <X 3330 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 2895 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 1454 0
+          /wFbUHJvRmlsbV9hLnBwXQ==
+        >
+        E 0 b0 7b 00
+        GUID {99B7C3FB-42F2-4B72-BAE8-0B003DB5122D}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 31
+        VELLANE 132 206 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "C:\Program Files (x86)\REAPER\Data\Text_Strings\Text Events List.txt"
+        CFGEDITVIEW 68380.800000 100.000000 0 48 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.12500000 23 77 1641 1019 0 2 1 2 0.00000000 0 0 0 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{7DB8C5CF-7169-4A94-9DDF-441BA2AD9BBB}'
+    NAME "VENUE - DRUMS"
+    PEAKCOL 16842496
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 0.99999797755442 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {7DB8C5CF-7169-4A94-9DDF-441BA2AD9BBB}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 87 "Guitarist Sing Along"
+      0 86 "Drummer Sing Along"
+      0 85 "Bassist Sing Along"
+      0 84 "----"
+      0 40 "Spotlight on Vocals"
+      0 39 "Spotlight on Guitar"
+      0 38 "Spotlight on Drums"
+      0 37 "Spotlight on Bass"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.00000000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {548DF56E-8849-49C0-ADDC-B71C4CCA67DC}
+      IID 33
+      NAME "VENUE"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {7B52349C-A800-49F6-B396-E69FA49FD647}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {C01F9020-3A68-40FC-9EFE-F0F8325121C9}
+        <X 0 0
+          /wNWRU5VRQ==
+        >
+        <X 0 0
+          /wFbbGlnaHRpbmcgKGludHJvKV0=
+        >
+        <X 0 0
+          /wFbUHJvRmlsbV9hLnBwXQ==
+        >
+        <X 0 0
+          /wFbY29vcF9hbGxfZmFyXQ==
+        >
+        <X 11160 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 5760 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4680 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4740 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4620 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4020 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 3300 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 3420 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 3600 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 5040 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4260 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 3360 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 5760 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4680 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4740 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4620 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4020 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 3300 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 3420 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 3600 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 5040 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4260 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4740 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 5760 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4680 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4740 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4620 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4020 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 3300 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 3420 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 3600 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 5040 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4260 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 5040 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 3600 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 5040 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 4260 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 5040 0
+          /wFbY29vcF9kX2JlaGluZF0=
+        >
+        <X 7905 0
+          /wFbY29vcF9hbGxfYmVoaW5kXQ==
+        >
+        <X 1425 0
+          /wFbY29vcF9ndl9iZWhpbmRd
+        >
+        <X 3870 0
+          /wFbY29vcF92X2JlaGluZF0=
+        >
+        <X 2880 0
+          /wFbY29vcF9iZ19uZWFyXQ==
+        >
+        <X 2865 0
+          /wFbY29vcF92X2JlaGluZF0=
+        >
+        <X 960 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 2895 0
+          /wFbY29vcF9kX25lYXJd
+        >
+        <X 3810 0
+          /wFbY29vcF9hbGxfbmVhcl0=
+        >
+        <X 2880 0
+          /wFbY29vcF9idl9uZWFyXQ==
+        >
+        <X 1920 0
+          /wFbY29vcF9rdl9uZWFyXQ==
+        >
+        <X 960 0
+          /wFbY29vcF9hbGxfbmVhcl0=
+        >
+        <X 1920 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 1950 0
+          /wFbY29vcF9rX25lYXJd
+        >
+        <X 1890 0
+          /wFbY29vcF9iZ19uZWFyXQ==
+        >
+        <X 2430 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 3360 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 3840 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 480 0
+          /wFbbGlnaHRpbmcgKGJsYWNrb3V0X3Nwb3QpXQ==
+        >
+        <X 0 0
+          /wFbUHJvRmlsbV9hLnBwXQ==
+        >
+        <X 3330 0
+          /wFbY29vcF9mcm9udF9uZWFyXQ==
+        >
+        <X 2895 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 1454 0
+          /wFbUHJvRmlsbV9hLnBwXQ==
+        >
+        E 0 b0 7b 00
+        GUID {99B7C3FB-42F2-4B72-BAE8-0B003DB5122D}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 32
+        VELLANE 132 206 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "C:\Program Files (x86)\REAPER\Data\Text_Strings\Text Events List.txt"
+        CFGEDITVIEW 68160.000000 100.000000 0 48 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.12500000 23 77 1641 1019 0 2 1 2 0.00000000 0 0 0 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{EF863BA0-A0C1-44E2-B0EC-DAC170D90DE1}'
+    NAME "VENUE - BASS"
+    PEAKCOL 16842496
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 0.99999797755442 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {EF863BA0-A0C1-44E2-B0EC-DAC170D90DE1}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 87 "Guitarist Sing Along"
+      0 86 "Drummer Sing Along"
+      0 85 "Bassist Sing Along"
+      0 84 "----"
+      0 40 "Spotlight on Vocals"
+      0 39 "Spotlight on Guitar"
+      0 38 "Spotlight on Drums"
+      0 37 "Spotlight on Bass"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 247.93750000000003
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {548DF56E-8849-49C0-ADDC-B71C4CCA67DC}
+      IID 34
+      NAME "VENUE"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {7B52349C-A800-49F6-B396-E69FA49FD647}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {91F69545-A0E6-4B15-A4E1-D76E2383E045}
+        <X 0 0
+          /wNWRU5VRQ==
+        >
+        <X 0 0
+          /wFbbGlnaHRpbmcgKGludHJvKV0=
+        >
+        <X 0 0
+          /wFbUHJvRmlsbV9hLnBwXQ==
+        >
+        <X 0 0
+          /wFbY29vcF9hbGxfZmFyXQ==
+        >
+        <X 3840 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 11820 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 8100 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 11640 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 11820 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 8100 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 8100 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 11820 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 8100 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7980 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 11820 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 8100 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 6300 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 8100 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9iX25lYXJd
+        >
+        <X 5820 0
+          /wFbY29vcF9hbGxfZmFyXQ==
+        >
+        E 11400 b0 7b 00
+        GUID {99B7C3FB-42F2-4B72-BAE8-0B003DB5122D}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 33
+        VELLANE 132 206 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "C:\Program Files (x86)\REAPER\Data\Text_Strings\Text Events List.txt"
+        CFGEDITVIEW 67939.200000 100.000000 0 48 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.12500000 23 77 1641 1019 0 2 1 2 0.00000000 0 0 0 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{AF4F7827-37B6-496A-A668-A6C2FC0DC0F5}'
+    NAME "VENUE - GTR"
+    PEAKCOL 16842496
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 0.99999797755442 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {AF4F7827-37B6-496A-A668-A6C2FC0DC0F5}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 87 "Guitarist Sing Along"
+      0 86 "Drummer Sing Along"
+      0 85 "Bassist Sing Along"
+      0 84 "----"
+      0 40 "Spotlight on Vocals"
+      0 39 "Spotlight on Guitar"
+      0 38 "Spotlight on Drums"
+      0 37 "Spotlight on Bass"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 247.93750000000003
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {548DF56E-8849-49C0-ADDC-B71C4CCA67DC}
+      IID 35
+      NAME "VENUE"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {7B52349C-A800-49F6-B396-E69FA49FD647}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {15170202-B01A-4AD3-8682-EE90D29CF207}
+        <X 0 0
+          /wNWRU5VRQ==
+        >
+        <X 0 0
+          /wFbbGlnaHRpbmcgKGludHJvKV0=
+        >
+        <X 0 0
+          /wFbUHJvRmlsbV9hLnBwXQ==
+        >
+        <X 0 0
+          /wFbY29vcF9hbGxfZmFyXQ==
+        >
+        <X 3840 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7740 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7740 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7740 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7980 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7740 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7320 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7740 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 3960 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7740 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7980 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7740 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 3480 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7740 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 8220 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9nX25lYXJd
+        >
+        <X 7620 0
+          /wFbY29vcF9hbGxfZmFyXQ==
+        >
+        E 11400 b0 7b 00
+        GUID {99B7C3FB-42F2-4B72-BAE8-0B003DB5122D}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 34
+        VELLANE 132 206 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "C:\Program Files (x86)\REAPER\Data\Text_Strings\Text Events List.txt"
+        CFGEDITVIEW 67718.400000 100.000000 0 48 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.12500000 23 77 1641 1019 0 2 1 2 0.00000000 0 0 0 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{DAA77FEC-C15F-440F-BE9A-D006FC00723E}'
+    NAME "VENUE - VOCALS"
+    PEAKCOL 16842496
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 0.99999797755442 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 2 -1
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {DAA77FEC-C15F-440F-BE9A-D006FC00723E}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 87 "Guitarist Sing Along"
+      0 86 "Drummer Sing Along"
+      0 85 "Bassist Sing Along"
+      0 84 "----"
+      0 40 "Spotlight on Vocals"
+      0 39 "Spotlight on Guitar"
+      0 38 "Spotlight on Drums"
+      0 37 "Spotlight on Bass"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 244.12500000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {548DF56E-8849-49C0-ADDC-B71C4CCA67DC}
+      IID 36
+      NAME "VENUE"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {7B52349C-A800-49F6-B396-E69FA49FD647}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {0093CA30-1137-4163-B979-481A4ADA9704}
+        <X 0 0
+          /wNWRU5VRQ==
+        >
+        <X 0 0
+          /wFbbGlnaHRpbmcgKGludHJvKV0=
+        >
+        <X 0 0
+          /wFbUHJvRmlsbV9hLnBwXQ==
+        >
+        <X 0 0
+          /wFbY29vcF9hbGxfZmFyXQ==
+        >
+        <X 3840 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3660 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4020 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3780 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 2160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 5160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4620 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 5040 0
+          /wFbY29vcF92X25lYXJd
+        >
+        E 2340 90 55 60
+        E 0 90 57 60
+        <X 1620 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 2160 0
+          /wFbY29vcF9ndl9uZWFyXQ==
+        >
+        <X 1740 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 2040 0
+          /wFbY29vcF9ndl9uZWFyXQ==
+        >
+        <X 1980 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 1980 0
+          /wFbY29vcF9ndl9uZWFyXQ==
+        >
+        E 1920 80 55 00
+        E 60 80 57 00
+        <X 1620 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4020 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3780 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 2160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 5160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4620 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 5040 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3960 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3900 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 2340 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3660 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4020 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3780 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 2160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 5160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4620 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 5040 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3960 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3900 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4200 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3660 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4020 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3780 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 2160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 5160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4620 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 5040 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3960 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3900 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3540 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3660 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4020 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3780 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 2160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 5160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4620 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 5040 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3960 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3900 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3420 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3660 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4020 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 3780 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 2160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 5160 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 4620 0
+          /wFbY29vcF92X25lYXJd
+        >
+        <X 12900 0
+          /wFbY29vcF92X25lYXJd
+        >
+        E 0 b0 7b 00
+        GUID {99B7C3FB-42F2-4B72-BAE8-0B003DB5122D}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 35
+        VELLANE 132 206 60
+        COLORMAP "C:\Program Files (x86)\REAPER\Data\color_maps\rockband_guitarbass.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "C:\Program Files (x86)\REAPER\Data\Text_Strings\Text Events List.txt"
+        CFGEDITVIEW 67497.600000 100.000000 0 48 0 0 0
+        CFGEDIT 1 1 0 0 0 1 1 1 1 1 1 0.12500000 23 77 1641 1019 0 2 1 2 0.00000000 0 0 0 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{7BC63EFC-0ABC-4D0D-8204-E9893AE9FFFA}'
+    NAME "BEAT"
+    PEAKCOL 23514346
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 0 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {7BC63EFC-0ABC-4D0D-8204-E9893AE9FFFA}
+    PERF 0
+    MIDIOUT -1
+    <MIDINOTENAMES
+      0 13 "Up Beats"
+      0 12 "Downbeat"
+    >
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0.00000000000000
+      SNAPOFFS 0.00000000000000
+      LENGTH 187.62500000000000
+      LOOP 0
+      ALLTAKES 0
+      SEL 0
+      FADEIN 1 0.000000 0.000000 1 0
+      FADEOUT 1 0.000000 0.000000 1 0
+      MUTE 0
+      IGUID {9960CDFD-BF2E-4E67-97CD-4F13D0A3F2ED}
+      IID 37
+      NAME "BEAT"
+      VOLPAN 1.000000 0.000000 1.000000 -1.000000
+      SOFFS 0.00000000000000 0.00000000000000
+      PLAYRATE 1.00000000000000 1 0.00000000000000 -65536
+      CHANMODE 0
+      GUID {CEBFDCF1-B2BD-47E1-A085-C26E1C9E9ED2}
+      <SOURCE MIDI
+        HASDATA 1 480 QN
+        POOLEDEVTS {1F7414DC-F0FC-4459-805C-5EFB842E168B}
+        <X 0 0
+          /wNCRUFU
+        >
+        E 0 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0c 64
+        E 120 86 0c 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 360 96 0d 64
+        E 120 86 0d 40
+        E 1920 b0 7b 00
+        GUID {8CB930E8-B6A0-4CAD-825A-9F47FB66C1D0}
+        IGNTEMPO 0 120.00000000 4 4
+        SRCCOLOR 36
+        VELLANE 132 100 100
+        COLORMAP "C:\Program Files\REAPER\Data\color_maps\rockband_vox-other.png"
+        BANKPROGRAMFILE "C:\Users\Alexander\AppData\Roaming\REAPER/Data/GM.reabank"
+        TEXTSTRINGFILE "Text Events List.txt"
+        CFGEDITVIEW 4870.416267 0.136407 0 48 0 0 0
+        CFGEDIT 1 1 0 0 1 1 1 1 1 1 1 0.12500000 474 0 1314 1010 0 2 0 2 0.00000000 0 0 0 0 0.500000 1 0 1.000000 64
+        KEYSNAP 0 0 "102034050607" 0 "Major"
+        EVTFILTER 0 -1 -1 -1 -1 0 1 0 0 -1.00000000 -1.00000000
+      >
+    >
+  >
+  <TRACK '{7A03F3E1-2291-4212-ABE3-DD89FD2A1F31}'
+    NAME "REF"
+    PEAKCOL 25198656
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1.00000000000000 0.00000000000000 -1.00000000000000 -1.00000000000000 1.00000000000000
+    MUTESOLO 0 0 0
+    IPHASE 0
+    ISBUS 0 0
+    BUSCOMP 1 0
+    SHOWINMIX 1 0.666700 0.500000 1 0.500000 -1 -1 -1
+    FREEMODE 0
+    SEL 0
+    REC 0 0 0 0 0 0 0
+    TRACKHEIGHT 0 0
+    INQ 0 0 0 0.5000000000 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {7A03F3E1-2291-4212-ABE3-DD89FD2A1F31}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+  >
+>
