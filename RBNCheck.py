@@ -1,5 +1,5 @@
 # PYTHON REAPER SCRIPT FOR RBN ERROR CHECKING
-# Version 2.05
+# Version 3.0.0
 # Alex - 2012-10-15
 # rbn@mirockband.com
 # This script is inspired on Casto's RBN Script
@@ -7,10 +7,11 @@
 # Special thanks to neurogeek for helping with Python learning making all this possible!
 # What's new
 #--- Ported script to python to support REPAER 4.13+
-#--- Improved layout
+#--- Tabbed layout
 #--- More info messages
 #--- No gems under solo marker (Guitar / Bass)
-#--- Non existent gems on lower difficulties based on expert ( Drums)
+#--- Non existent gems on lower difficulties based on expert(Drums)
+#--- List of all practice sections and show error if repeated
 #
 #GUITAR/BASS
 #- Expert
@@ -64,35 +65,38 @@
 #
 #PRO KEYS 
 #- Hard
-#--- LEGACY: No four note chords (Pending)
+#--- LEGACY: No four note chords
 #- Medium
-#--- LEGACY: No three note chords (Pending)
+#--- LEGACY: No three note chords
 #- Easy
-#--- LEGACY: No chords (Pending)
+#--- LEGACY: No chords
 #
 #EVENTS
-#--- LEGACY: Error if not a Text Event or Track Name type (Pending)
+#--- LEGACY: Error if not a Text Event or Track Name type
 #
 #GENERAL
-#--- LEGACY: Overdrive unison chart (Pending)
+#--- LEGACY: Overdrive unison chart
 #--- LEGACY: Error if Keys and Pro Keys ODs aren't exact same (Pending)
 #--- LEGACY: Error if Vocals and Harmony1 ODs aren't exact same. (Pending)
 #
-import os,re,base64,string,webbrowser
+import os
+import sys
+import re
+import base64
+import string
+import webbrowser
 from collections import Counter
 from ConfigParser import SafeConfigParser
+from reaper_python import RPR_ShowConsoleMsg as console_msg
 
 # (start) Config section
-#parser = SafeConfigParser()
-#parser.read('C:\\rbn-py-checker\\rbn_config.ini')
-#RPR_ShowConsoleMsg( parser.get('GENERAL', 'output_file') )
-OUTPUT_FILE = 'C:\\rbn-py-checker\\myfile.txt'
-OUTPUT_HTML_FILE = 'C:\\rbn-py-checker\\RBN_Output.html'
-UC_D_TOM_MARKERS = False
-CONST_DEBUG_EXTRA = True
-CONST_DEBUG = True	
-global_harm2_phase_start = []
-global_harm2_phase_end = []
+parser = SafeConfigParser()
+parser.read( os.path.join( sys.path[0], "rbn_config.ini" ) )
+OUTPUT_FILE = os.path.join( sys.path[0], "debug/debug_file.txt" )
+OUTPUT_HTML_FILE = os.path.join( sys.path[0], "output/results.html" )
+CONST_TOM_MARKERS = parser.getboolean( 'DRUMS', 'tom_markers_warnings' )
+CONST_DEBUG_EXTRA = parser.getboolean( 'DEBUG', 'low_level' )
+CONST_DEBUG = parser.getboolean( 'DEBUG', 'high_level' )
 # (end) Config section
 
 # (start) Class Notas
@@ -106,13 +110,8 @@ class Nota(object):
 
 # (start) Template Dictionary
 dTmpl = {}
-dTmpl[''] = 0
-dTmpl[''] = 0
-dTmpl[''] = 0
-dTmpl[''] = ''
-dTmpl[''] = ''
-dTmpl[''] = ''
-dTmpl[''] = ''
+global_harm2_phase_start = []
+global_harm2_phase_end = []
 
 var_sets = [
 						'bass_total_ods',
@@ -126,7 +125,10 @@ var_sets = [
 						'bass_error_icon',
 						'guitar_error_icon',
 						'keys_error_icon',
-						'pro_error_icon',
+						'real_keys_x_error_icon',
+						'real_keys_h_error_icon',
+						'real_keys_m_error_icon',
+						'real_keys_e_error_icon',
 						'vocals_error_icon',
 						'harm1_error_icon',
 						'harm2_error_icon',
@@ -167,7 +169,11 @@ var_sets = [
 						'keys_gems_not_found',
 						'keys_chords_four_notes',
 						'keys_chords_three_notes',
-						'keys_chords_easy',
+						'keys_chords_easy',						
+						'real_keys_x_general_issues',
+						'real_keys_h_general_issues',
+						'real_keys_m_general_issues',
+						'real_keys_e_general_issues',						
 						'vocals_general_issues',
 						'vocals_phrases',
 						'harm1_general_issues',
@@ -176,7 +182,14 @@ var_sets = [
 						'harm2_phrases',
 						'harm3_general_issues',
 						'harm3_phrases',
-						'events_list']
+						'first_event',
+						'last_event',
+						'events_list',
+						'drums_pos_od',
+						'guitar_pos_od',
+						'bass_pos_od',
+						'keys_pos_od',
+						'vocals_pos_od']
 
 for elem in var_sets:
 	dTmpl[ elem ] = ''
@@ -398,7 +411,7 @@ def handle_drums( content, part_name ):
 		#Let the user decide if he/she wants to display tom markers errors
 		#This may lead to false positives as tom markers are authored convergin a whole section instead of 
 		#having gems per note
-		if( UC_D_TOM_MARKERS ):
+		if( CONST_TOM_MARKERS ):
 			debug( "", True )
 			debug( "=================== ANIMATION BUT NO PRO MARKER ===================", True )
 			all_tom_anim = Counter()
@@ -507,7 +520,10 @@ def handle_drums( content, part_name ):
 				localTmpl[ "drums_general_issues"] += '<div class="row-fluid"><span class="span12"><strong class="">0.0</strong> <span>Gems are missing from at least one difficulty at Solo Marker #{}. Only found {} gems</span> </span></div>'.format( index+1, gems_text[:-3] )
 				has_error = True
 		debug( "=================== ENDS GENERAL DRUMS: No gems under solo marker ===================", True )
-		
+		#Get all positions for ods
+		drums_pos_od = []
+		for notas_item in filter(lambda x: x.valor == 116 , l_gems):
+			drums_pos_od.append( int ( notas_item.pos / 1920 ) + 1 )
 		#
 		total_kicks_x = len( filter(lambda x: x.valor == 96, l_gems) )
 		total_kicks_h = len( filter(lambda x: x.valor == 84, l_gems) )
@@ -535,6 +551,7 @@ def handle_drums( content, part_name ):
 		localTmpl["drums_total_kicks_e"] = total_kicks_e
 		localTmpl["drums_total_fills"] = total_fills
 		localTmpl["drums_total_ods"] = total_ods
+		localTmpl["drums_pos_od"] = drums_pos_od
 		if( has_error ):
 			localTmpl['drums_error_icon'] = '<i class="icon-exclamation-sign"></i>'
 		
@@ -545,8 +562,10 @@ def handle_guitar(content, part_name ):
 		r_gems = []
 		localTmpl = {}
 		if( part_name == "PART GUITAR" ):
+			guitar_pos_od = []
 			has_guitar = True
 		elif( part_name == "PART BASS" ):
+			bass_pos_od = []
 			has_bass = True
 		output_part_var = part_name.lower().replace( 'part ','' )
 		has_error = False
@@ -942,6 +961,13 @@ def handle_guitar(content, part_name ):
 				has_error = True
 		debug( "=================== ENDS GENERAL " + part_name + ": NO MATCHING GEMS ON EXPERT / ALL NODES BEING USED ===================", True )
 		'''
+		#Get all positions for ods
+		for notas_item in filter(lambda x: x.valor == 116 , l_gems):			
+			if( part_name == "PART GUITAR" ):				
+				guitar_pos_od.append( int ( notas_item.pos / 1920 ) + 1 )
+			elif( part_name == "PART BASS" ):
+				bass_pos_od.append( int ( notas_item.pos / 1920 ) + 1 )
+
 		#Some totals
 		total_ods = len( filter(lambda x: x.valor == 116, l_gems) )
 		debug( "", True )
@@ -954,6 +980,11 @@ def handle_guitar(content, part_name ):
 		debug( "=================== ENDS TOTAL " + part_name + ": Some numbers and stats ===================", True )		
 		
 		localTmpl[ output_part_var + "_total_ods"] = total_ods
+		if( part_name == "PART GUITAR" ):
+			localTmpl[ "guitar_pos_od"] = guitar_pos_od
+		elif( part_name == "PART BASS" ):
+			localTmpl[ "bass_pos_od"] = bass_pos_od
+			
 		if( has_error ):
 			localTmpl[ output_part_var + '_error_icon'] = '<i class="icon-exclamation-sign"></i>'
 		
@@ -1447,6 +1478,10 @@ def handle_keys(content, part_name ):
 				has_error = True
 		debug( "=================== ENDS GENERAL KEYS: NO MATCHING GEMS ON EXPERT / ALL NODES BEING USED ===================", True )
 		'''
+		#Get all positions for ods
+		keys_pos_od = []
+		for notas_item in filter(lambda x: x.valor == 116 , l_gems):
+			keys_pos_od.append( int ( notas_item.pos / 1920 ) + 1 )
 		#Some totals
 		total_ods = len( filter(lambda x: x.valor == 116, l_gems) )
 		debug( "", True )
@@ -1455,9 +1490,193 @@ def handle_keys(content, part_name ):
 		debug( "Total ODs: {}".format( total_ods ), True )
 		debug( "=================== ENDS TOTAL KEYS: Some numbers and stats ===================", True )		
 		
-		localTmpl[ "keys_total_ods"] = total_ods
+		localTmpl[ "keys_total_ods" ] = total_ods
+		localTmpl[ "keys_pos_od" ] = keys_pos_od
 		if( has_error ):
 			localTmpl[ 'keys_error_icon'] = '<i class="icon-exclamation-sign"></i>'
+		
+		return localTmpl
+
+def handle_pro_keys(content, part_name ):
+		l_gems = []
+		r_gems = []
+		localTmpl = {}
+		has_error = False
+		output_part_var = part_name.lower().replace( 'part ','' )		
+		
+		if ( part_name == "PART REAL_KEYS_X" ):
+			max_notes = 5
+			dif_name = "Expert"
+			localTmpl["real_keys_x_error_icon"] = ''
+			localTmpl[ "real_keys_x_general_issues" ] = ''
+		if ( part_name == "PART REAL_KEYS_H" ):
+			max_notes = 3
+			dif_name = "Hard"
+			localTmpl["real_keys_h_error_icon"] = ''
+			localTmpl[ "real_keys_h_general_issues" ] = ''
+		if ( part_name == "PART REAL_KEYS_M" ):
+			max_notes = 2
+			dif_name = "Medium"
+			localTmpl["real_keys_m_error_icon"] = ''
+			localTmpl[ "real_keys_m_general_issues" ] = ''
+		if ( part_name == "PART REAL_KEYS_E" ):
+			max_notes = 1
+			dif_name = "Easy"
+			localTmpl["real_keys_e_error_icon"] = ''
+			localTmpl[ "real_keys_e_general_issues" ] = ''
+
+		localTmpl[ "prokeys_chords_four_notes"] = '';
+		localTmpl[ "prokeys_chords_three_notes"] = '';
+		localTmpl[ "prokeys_chords_easy"] = '';
+		localTmpl[ "prokeys_gems_not_found"] = '';
+		num_to_text = {
+			127 : "TRILL MARKER", 
+      126 : "GLISSANDO MARKER",
+			124 : "BRE", 
+			123 : "BRE",
+			122 : "BRE",
+			121 : "BRE", 
+			120 : "BRE",
+			116: "Overdrive",
+			105: "Solo Marker",			
+			72:	"C4",
+			71:	"B3",
+			70:	"A#3",
+			69:	"A3",
+			68:	"G#3",
+			67:	"G3",
+			66:	"F#3",
+			65:	"F3",
+			64:	"E3",
+			63:	"D#3",
+			62:	"D3",
+			61:	"C#3",
+			60:	"C3",
+			59:	"B2",
+			58:	"A#2",
+			57:	"A2",
+			56:	"G#2",
+			55:	"G2",
+			54:	"F#2",
+			53:	"F2",
+			52:	"E2",
+			51:	"D#2",
+			50:	"D2",
+			49:	"C#2",
+			48:	"C2",
+			9:	"Range A2-C4",
+			8:	"Range",
+			7:	"Range",
+			6:	"Range",
+			5:	"Range F2-A3",
+			4:	"Range",
+			3:	"Range",
+			2:	"Range",
+			1:	"Range",
+			0:	"Range C2-C3"
+		}
+		#debug (content, True)
+		all_notes = re.findall("(?:^<(X\\s[a-f,0-9]+\\s[a-f,0-9]+)$|^([E,e]\s[a-f,0-9]+\s[a-f,0-9]+\s[a-f,0-9]+\s[a-f,0-9]+)$)", content, re.MULTILINE)
+		noteloc = 0;
+		c = Counter()
+		for note in all_notes:
+			decval = 0;
+			
+			x, e = note			
+			if x:
+				elem = x
+			elif e:
+				elem = e
+				
+			midi_parts = elem.split()
+			
+			if( midi_parts[0].lower() == 'e' ):
+				decval = int( midi_parts[3], 16 )
+			
+			noteloc = int( noteloc ) + int( midi_parts[1] );			
+
+			#Just parse or debug those notes that are really in the chart
+			#we can exclude notes off, text events, etc.
+			if( midi_parts[0].lower() == 'e' and re.search("^9", midi_parts[2] ) ):
+				l_gems.append( Nota(decval, noteloc) )
+				c[ noteloc ] += 1
+				debug_extra("Starts with 9: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
+				debug_extra( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
+			elif( midi_parts[0].lower() == 'e' and re.search("^8", midi_parts[2] ) ):			
+				r_gems.append( Nota(decval, noteloc) )
+				debug_extra("Starts with 8: Midi # {}, MBT {}, Type {} ".format( str( decval ), str( noteloc ),str( midi_parts[2] ) ) )
+				debug_extra( "{} at {}".format( num_to_text[decval], format_location( noteloc ) ), True )
+			else:
+				debug_extra("Text Event: Midi # {}, MBT {}, Type {}, Extra {} ".format( str( decval ), str( noteloc ),str( midi_parts[1] ),str( midi_parts[2] ) ) )
+				debug_extra( "{} at {}".format( "None", format_location( noteloc ) ), True )
+				debug_extra("")
+		
+		debug(str(c), True)
+		debug("", True)
+		debug("Will validate with {} max notes".format(max_notes), True)		
+		for position, value in c.iteritems():
+			debug( "{} notes found at {}".format( value, format_location( position ) ), True )			
+			if( value > max_notes ):
+				debug("Found chord with {} notes".format( value ), True)
+				localTmpl[ output_part_var + "_general_issues" ] += '<div class="row-fluid"><span class="span12"><strong class="">{}</strong> <span>{} difficulty: Found chord with {} or more notes</span> </span></div>'.format( format_location( position ), dif_name, max_notes+1 )
+				has_error = True	
+		'''
+		#No gems under solo marker
+		solo_start = []
+		solo_end = []
+		counter = Counter()
+		gems_in_solo = Counter()
+		debug( "", True )
+		debug( "=================== GENERAL KEYS: No gems under solo marker ===================", True )
+		#Start notes
+		for notas_item in filter(lambda x: x.valor == 103 , l_gems):
+			solo_start.append( notas_item.pos )
+			debug_extra( "Found start {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True ) 
+		#End notes
+		for notas_item in filter(lambda x: x.valor == 103 , r_gems):
+			solo_end.append( notas_item.pos )			
+			debug_extra( "Found end {} at {} - ( {}, {} )".format( num_to_text[ notas_item.valor ], format_location( notas_item.pos ),notas_item.valor, notas_item.pos ), True )		
+		#Check for any gem under solo marker... we need at least one gem for the solo to be valid
+		#for midi_check in [60,61,62,63,64,72,73,74,75,76,84,85,86,87,88,96,97,98,99,100]:			
+		for index, item in enumerate(solo_start):
+			gems_text = '';
+			if ( filter(lambda x: x.valor >=60 and x.valor <=64 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Easy + '
+			if ( filter(lambda x: x.valor >=72 and x.valor <=76 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Medium + '
+			if ( filter(lambda x: x.valor >=84 and x.valor <=88 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Hard + '
+			if ( filter(lambda x: x.valor >=96 and x.valor <=100 and x.pos >= item and x.pos <= solo_end[index], l_gems) ):
+				counter[ item ] += 1
+				gems_text += 'Expert + '
+			
+			debug( "INFO: Solo Marker #{} starts at {} ends at {} - [ {},{} ]".format( index+1, format_location( item ), format_location( solo_end[index] ), item, solo_end[index] ) ,True )
+			
+			if( counter[ item ] < 4 ):
+				debug( "ERROR: Gems are missing from at least one difficulty at Solo Marker #{}. Only found {} gems".format( index+1, gems_text[:-3] ) ,True )				
+				localTmpl[ "keys_general_issues"] += '<div class="row-fluid"><span class="span12"><strong class="">{}</strong> <span>Gems are missing from at least one difficulty at Solo Marker #{}. Only found {} gems</span> </span></div>'.format( format_location( item ), index+1, gems_text[:-3] )
+				has_error = True
+		debug( "=================== ENDS GENERAL KEYS: No gems under solo marker ===================", True )
+		
+		#Get all positions for ods
+		keys_pos_od = []
+		for notas_item in filter(lambda x: x.valor == 116 , l_gems):
+			keys_pos_od.append( int ( notas_item.pos / 1920 ) + 1 )
+		'''
+		#Some totals
+		total_ods = len( filter(lambda x: x.valor == 116, l_gems) )
+		debug( "", True )
+		debug( "=================== TOTAL PRO KEYS: Some numbers and stats ===================", True )
+		#debug( "Total Solo Markers: {}".format( len( solo_start ) ), True )
+		debug( "Total ODs: {}".format( total_ods ), True )
+		debug( "=================== ENDS TOTAL PRO KEYS: Some numbers and stats ===================", True )		
+		
+		localTmpl[ "prokeys_total_ods" ] = total_ods
+		if( has_error ):
+			localTmpl[ 'prokeys_error_icon'] = '<i class="icon-exclamation-sign"></i>'
 		
 		return localTmpl
 
@@ -1583,20 +1802,28 @@ def handle_events(content, part_name ):
 		for index, item in enumerate( sect_start ):
 			debug_extra( "Practice section {} goes from {} to {} at {} - [{},{}]".format( item, format_location( sect_start_pos[ index ] ), sect_ends[ index ], format_location( sect_ends_pos[ index ] ), sect_start_pos[ index ], sect_ends_pos[ index ] ), True )
 		
+		localTmpl['first_event'] = format_location( sect_start_pos[0] )
+		localTmpl['last_event'] = int ( sect_ends_pos.pop() / 1920 ) + 1
+		
 		return localTmpl
 
 def format_location( note_location ):
+		'''
+		example 1 (time signature: 4/4, position in chunk: 7920, position in reaper: 3.1.25):
+		m = noteposition / (timesignature * (960 * 4)) + 1 = 7920 / ((4 / 4) * 3840) + 1 = 3.0625	(measures = 3 and remainder is 0.0625)
+		b = remainder / (1 / beats) + 1 = 0.0625 / (1 / 4) + 1 = 1.25	(3.1.25)
+		example 2 (time signature: 5/7, position in chunk: 3943, position in reaper: 2.3.19):
+		m = noteposition / (timesignature * (960 * 4)) + 1 = 3943 / ((5 / 7) * 3840) + 1 = 2.43755208333...	(measures = 2)
+		b = remainder / (1 / beats) + 1 = 0.43755208333.../ (1 / 5) + 1 = 3.18776041666...	(2.3.19)
+		'''
 		return ("{}.{}".format( int ( note_location / 1920 ) + 1 , int (( note_location % 1920) / 480 ) + 1 ))
 	
 # [resto de las funciones]
 # (end) Funciones de manejo de instrumentos
 
-def console_msg(*msg):
-  RPR_ShowConsoleMsg(str(msg) + '\n' + '\n')
-
 def debug( output_content, add_new_line=False ):
 	global CONST_DEBUG
-	if( CONST_DEBUG_EXTRA ):
+	if( CONST_DEBUG ):
 		if add_new_line: 
 			f.write( output_content + '\n')
 		else:
@@ -1621,10 +1848,10 @@ switch_map = {"PART DRUMS" : handle_drums,
 							"HARM2" : handle_vocals,
 							"HARM3" : handle_vocals,
 							"PART KEYS" : handle_keys,
-							"PART REAL_KEYS_X" : handle_pro_keys_x,
-							"PART REAL_KEYS_H" : handle_pro_keys_h,
-							"PART REAL_KEYS_M" : handle_pro_keys_m,
-							"PART REAL_KEYS_E" : handle_pro_keys_e,
+							"PART REAL_KEYS_X" : handle_pro_keys,
+							"PART REAL_KEYS_H" : handle_pro_keys,
+							"PART REAL_KEYS_M" : handle_pro_keys,
+							"PART REAL_KEYS_E" : handle_pro_keys,
 							#"VENUE" : handle_venue,
 							"EVENTS" : handle_events
 							}
@@ -1662,7 +1889,7 @@ with open(OUTPUT_FILE, 'w') as f:
 				dTmpl.update(fTmpl)
 		
 		track_content = ""
-		
+	
 with open(OUTPUT_HTML_FILE, 'w') as f:
 	
 	var_html = '''
@@ -1671,7 +1898,7 @@ with open(OUTPUT_HTML_FILE, 'w') as f:
 <HEAD>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<!-- Le styles -->
-	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<style type="text/css">
 		body {
 			padding-top: 60px;
@@ -1681,7 +1908,8 @@ with open(OUTPUT_HTML_FILE, 'w') as f:
 			padding: 9px 0;
 		}
 	</style>
-	<link href="css/bootstrap-responsive.css" rel="stylesheet">		
+	<!--<link href="css/bootstrap-responsive.css" rel="stylesheet">		-->
+	<title>RBN Checker - Filename</title>
 </HEAD>
 <body>
 	<div class="container-fluid">
@@ -1718,7 +1946,7 @@ with open(OUTPUT_HTML_FILE, 'w') as f:
 						<li class="active"><a href="#tab_drums" data-toggle="tab">Drums ''' + dTmpl['drums_error_icon'] + '''</a></li>
 						<li><a href="#tab_bass" data-toggle="tab">Bass ''' + dTmpl['bass_error_icon'] + '''</a></li>
 						<li><a href="#tab_guitar" data-toggle="tab">Guitar ''' + dTmpl['guitar_error_icon'] + '''</a></li>
-						<li><a href="#tab_prokeys" data-toggle="tab">PRO Keys ''' + dTmpl['pro_error_icon'] + '''</a></li>
+						<li><a href="#tab_prokeys" data-toggle="tab">PRO Keys ''' + dTmpl['prokeys_error_icon'] + '''</a></li>
 						<li><a href="#tab_keys" data-toggle="tab">Keys ''' + dTmpl['keys_error_icon'] + '''</a></li>
 						<li><a href="#tab_vocals" data-toggle="tab">Vocals ''' + dTmpl['vocals_error_icon'] + '''</a></li>
 						<li><a href="#tab_harm1" data-toggle="tab">Harm 1 ''' + dTmpl['harm1_error_icon'] + '''</a></li>
@@ -1890,10 +2118,19 @@ with open(OUTPUT_HTML_FILE, 'w') as f:
 						
 						</div>
 						<div class="tab-pane" id="tab_prokeys">
-							<div class="span12">
+							<div class="span12">'''
+	if( var_html ):
+		var_html += '''
+								<div>
+									<h3 class="alert alert-error">Pro Keys Issues</h3>
+									<div>''' + "{}".format( dTmpl['real_keys_x_general_issues'] ) + '''</div>
+									<div>''' + "{}".format( dTmpl['real_keys_h_general_issues'] ) + '''</div>
+									<div>''' + "{}".format( dTmpl['real_keys_m_general_issues'] ) + '''</div>
+									<div>''' + "{}".format( dTmpl['real_keys_e_general_issues'] ) + '''</div>
+								</div>'''
 							
+	var_html += '''
 							</div>
-						
 						</div>
 						<div class="tab-pane" id="tab_keys">
 							<div class="span12"> '''
@@ -2006,20 +2243,54 @@ with open(OUTPUT_HTML_FILE, 'w') as f:
 						
 						</div>
 						<div class="tab-pane" id="tab_events">
-							<div class="span12"> '''
+							<div class="span12"> 
+							<div class="lead"><h3>Event types</h3></div>
+							'''
+							
 	if( dTmpl['events_list'] != '' ):
 		var_html += '''
 								<div>									
 									<div>''' + "{}".format( dTmpl['events_list'] ) + '''</div>
-								</div>'''
+								</div>
+								<table class="" id="" width="''' + "{}".format( ( int( dTmpl['last_event'] ) * 10 ) ) + '''px">
+									<tr>
+									</tr>
+								</table>
+	'''
 	var_html += '''
 							</div>						
 						</div>
-						<!--<div class="tab-pane" id="tab_venue">
-						
-						</div>-->
+						<div class="tab-pane" id="tab_venue">
+							<div class="span12"> 
+		'''
+	var_html += '''
+							</div>
+						</div>
 						<div class="tab-pane" id="tab_od">
-						
+							<div class="span12">
+								<div class="lead"><h3>Overdrive for instruments</h3></div>
+								<table class="table table-condensed" id="" width="''' + "{}".format( ( int( dTmpl['last_event'] ) * 10 ) ) + '''px">
+							'''
+	for instrument in ['guitar','bass','drums','keys']:
+		full_ods = dTmpl[ instrument + '_pos_od']
+		if( len(full_ods)<1 ):
+			full_ods = []
+		var_html += ''' <tr > 
+											<td>'''+ instrument.title() +'''</td>
+								'''		
+		for n in range( 1, int( dTmpl['last_event'] ) ):
+			if n in full_ods:			
+				var_html += '''
+											<td width="10px" style="background-color:#D4A017" id="''' + "{}_{}".format( instrument, n ) + '''"><a href="#" title="''' + "Aprox. Position {}".format(n) + '''" alt="''' + "Aprox. Position {}".format(n) + '''">...</a></td>
+									'''
+			else:
+				var_html += '''
+											<td width="10px" style="" id="''' + "{}_{}".format( instrument, n ) + '''"></td>
+									'''
+		var_html += ''' </tr> '''
+	var_html += ''' </table> '''
+	var_html += '''					
+							</div>
 						</div>
 					</div>
 				</div>
@@ -2028,22 +2299,8 @@ with open(OUTPUT_HTML_FILE, 'w') as f:
 	<!-- Le javascript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 	<script src="js/jquery.js"></script>
-	<script src="js/google-code-prettify/prettify.js"></script>
-	<script src="js/bootstrap-transition.js"></script>
-	<script src="js/bootstrap-alert.js"></script>
-	<script src="js/bootstrap-modal.js"></script>
-	<script src="js/bootstrap-dropdown.js"></script>
-	<script src="js/bootstrap-scrollspy.js"></script>
-	<script src="js/bootstrap-tab.js"></script>
-	<script src="js/bootstrap-tooltip.js"></script>
-	<script src="js/bootstrap-popover.js"></script>
-	<script src="js/bootstrap-button.js"></script>
-	<script src="js/bootstrap-collapse.js"></script>
-	<script src="js/bootstrap-carousel.js"></script>
-	<script src="js/bootstrap-typeahead.js"></script>
-	<script src="js/application.js"></script>		
+	<script src="js/bootstrap.min.js"></script>
   </body>
 </html>
 '''
