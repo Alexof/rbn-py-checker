@@ -1878,7 +1878,8 @@ with open(OUTPUT_FILE, 'w') as f:
 		#
 		#debug( track_content )
 		#
-		part = re.findall("^NAME\s+\"(.*)\"$", track_content, re.MULTILINE)
+		part = re.findall("^\s*NAME\s+\"(.*)\"\s*.*$", track_content, re.MULTILINE)
+		#part = re.findall("^NAME\s+\"(.*)\"\ *.*$", track_content, re.MULTILINE)
 		#part = re.findall("^NAME\s+\"PART\s+(.*)\"$", track_content, re.MULTILINE);
 		if part:
 			#console_msg( part[0] );			
