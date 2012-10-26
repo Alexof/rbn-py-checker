@@ -117,6 +117,7 @@ var_sets = [
 						'bass_total_ods',
 						'guitar_total_ods',
 						'keys_total_ods',
+						'keys_total_ods',
 						'vocals_od_start',
 						'harm1_od_start',
 						'harm2_od_start',
@@ -125,6 +126,7 @@ var_sets = [
 						'bass_error_icon',
 						'guitar_error_icon',
 						'keys_error_icon',
+						'prokeys_error_icon',
 						'real_keys_x_error_icon',
 						'real_keys_h_error_icon',
 						'real_keys_m_error_icon',
@@ -1879,6 +1881,8 @@ with open(OUTPUT_FILE, 'w') as f:
 		#debug( track_content )
 		#
 		part = re.findall("^\s*NAME\s+\"(.*)\"\s*.*$", track_content, re.MULTILINE)
+		part = part[0].split(' - ')
+		debug( "Part name is {}".format( part[0] ), True )
 		#part = re.findall("^NAME\s+\"(.*)\"\ *.*$", track_content, re.MULTILINE)
 		#part = re.findall("^NAME\s+\"PART\s+(.*)\"$", track_content, re.MULTILINE);
 		if part:
